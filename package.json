@@ -15,11 +15,13 @@
 	},
 	"devDependencies": {
 		"@fontsource-variable/inter": "^5.2.8",
+		"@internationalized/date": "^3.12.1",
 		"@lucide/svelte": "^1.8.0",
 		"@sveltejs/adapter-auto": "^7.0.1",
 		"@sveltejs/kit": "latest",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@tailwindcss/vite": "latest",
+		"bits-ui": "^2.17.3",
 		"clsx": "^2.1.1",
 		"prettier": "^3.8.1",
 		"prettier-plugin-svelte": "^3.5.1",
