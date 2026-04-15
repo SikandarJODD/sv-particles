@@ -31,7 +31,7 @@
 	{@render children?.()}
 </div>
 
-<style>
+<style lang="postcss">
 	@reference '../../../../app.css';
 
 	:global(.dark) {
@@ -61,7 +61,7 @@
 	}
 
 	:global(pre.shiki code) {
-		@apply grid min-w-full rounded-none border-0 bg-transparent p-0 break-words;
+		@apply grid min-w-full rounded-none border-0 bg-transparent p-0 wrap-break-word;
 		counter-reset: line;
 		box-decoration-break: clone;
 	}
