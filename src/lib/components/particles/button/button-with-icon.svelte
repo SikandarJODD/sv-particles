@@ -4,6 +4,6 @@
 </script>
 
 <Button>
-	<DownloadIcon aria-hidden="true" />
+	<DownloadIcon  />
 	Download
 </Button>
