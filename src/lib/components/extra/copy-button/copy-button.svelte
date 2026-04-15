@@ -19,7 +19,7 @@
 </script>
 
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
+	import Button from '$lib/components/extra/button.svelte';
 	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
 	import { cn } from '$lib/utils.js';
 	import CheckIcon from '@lucide/svelte/icons/check';

@@ -3,12 +3,12 @@ import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 import { createHighlighterCore } from 'shiki/core';
 
 const bundledLanguages = {
-	bash: () => import('@shikijs/langs/bash'),
-	diff: () => import('@shikijs/langs/diff'),
-	javascript: () => import('@shikijs/langs/javascript'),
-	json: () => import('@shikijs/langs/json'),
 	svelte: () => import('@shikijs/langs/svelte'),
-	typescript: () => import('@shikijs/langs/typescript')
+	typescript: () => import('@shikijs/langs/typescript'),
+	bash: () => import('@shikijs/langs/bash'),
+	// javascript: () => import('@shikijs/langs/javascript'),
+	// diff: () => import('@shikijs/langs/diff'),
+	// json: () => import('@shikijs/langs/json'),
 };
 
 /** The languages configured for the highlighter (`text` is handled by Shiki without a bundled grammar). */

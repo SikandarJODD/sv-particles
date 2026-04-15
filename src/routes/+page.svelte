@@ -1,10 +1,8 @@
 <script lang="ts">
-	import * as Drawer from '$lib/components/ui/drawer/index.js';
+	import Preview from '$lib/components/structure/preview/Preview.svelte';
+	import { data } from '$particles/button/data';
 </script>
 
 <div class="flex h-screen w-screen items-center justify-center">
-	<Drawer.Root shouldScaleBackground={false} direction="right">
-		<Drawer.Trigger>Open</Drawer.Trigger>
-		<Drawer.Content class='data-[vaul-drawer-direction=right]:sm:max-w-4xl'>Coding is fun</Drawer.Content>
-	</Drawer.Root>
+	<Preview {...data} />
 </div>

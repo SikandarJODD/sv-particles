@@ -28,3 +28,23 @@ export type CodeOverflowPropsWithoutHTML = WithChildren<{
 
 export type CodeOverflowProps = CodeOverflowPropsWithoutHTML &
 	WithoutChildren<HTMLAttributes<HTMLDivElement>>;
+
+// Main Code Types
+export type CodeType = {
+	code: string;
+	lang?: SupportedLanguage;
+	variant?: CodeVariant;
+	hideLines?: boolean;
+	highlight?: (number | [number, number])[];
+	filename: string;
+
+};
+
+// Usage doesn't require filename ..will need this in future
+export type CodeUsageType = {
+	code: string;
+	lang?: SupportedLanguage;
+	variant?: CodeVariant;
+	hideLines?: boolean;
+	highlight?: (number | [number, number])[];
+};

@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { ButtonProps, Size } from '$lib/components/button.svelte';
+	import type { ButtonProps, Size } from '$lib/components/extra/button.svelte';
 
 	export type GithubButtonProps = Omit<ButtonProps, 'href' | 'children' | 'size'> & {
 		repo: {
@@ -13,7 +13,7 @@
 </script>
 
 <script lang="ts">
-	import Button, { sizeMap } from '$lib/components/button.svelte';
+	import Button, { sizeMap } from '$lib/components/extra/button.svelte';
 	import { cn } from '$lib/utils';
 	import { cubicInOut } from 'svelte/easing';
 	import { Tween } from 'svelte/motion';
