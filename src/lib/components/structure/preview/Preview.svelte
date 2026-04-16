@@ -1,6 +1,10 @@
 <script lang="ts">
 	import type { CodeType } from '$lib/components/extra/code/types';
+	import { CopyButton } from '$lib/components/extra/copy-button';
 	import type { Component } from 'svelte';
+	import ClipboardIcon from '@lucide/svelte/icons/clipboard';
+	import InfoIcon from '@lucide/svelte/icons/info';
+	import { Frame, FrameFooter, FramePanel, FrameTitle } from '$lib/components/ui/frame';
 	import ViewCode from './ViewCode.svelte';
 
 	type Props = {
@@ -14,14 +18,15 @@
 	let PreviewComponent = $derived(props.preview);
 </script>
 
-<div>
-	<div>
-		<h2 class="text-base">{props.name}</h2>
-		<div class="mb-2 flex min-h-80 items-center justify-center border">
-			<PreviewComponent />
+<Frame class="w-full overflow-hidden border">
+	<FramePanel class="flex  min-h-80 items-center justify-center overflow-hidden">
+		<PreviewComponent />
+	</FramePanel>
+	<FrameFooter class="flex items-center justify-between pr-0.5 pl-2 pt-1.5 pb-1">
+		<div class="flex items-center gap-1">
+			<InfoIcon class="size-3.5 text-muted-foreground" />
+			<FrameTitle class="text-xs font-normal text-neutral-500 dark:text-primary!">{props.name}</FrameTitle>
 		</div>
-		<div class='flex justify-end'>
-			<ViewCode {...props} />
-		</div>
-	</div>
-</div>
+		<ViewCode {...props} />
+	</FrameFooter>
+</Frame>
