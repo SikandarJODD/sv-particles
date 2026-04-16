@@ -1,14 +1,13 @@
 <script lang="ts">
 	import * as InputGroup from "$lib/components/ui/input-group/index.js";
-	import SearchIcon from "@lucide/svelte/icons/search";
+
+	let value = $state("");
+	let maxlength = 14;
 </script>
 
-<InputGroup.Root>
-	<InputGroup.Input placeholder="Search..." />
-	<InputGroup.Addon>
-    	<SearchIcon />
-    </InputGroup.Addon>
-    <InputGroup.Addon align="inline-end">
-        <InputGroup.Button>Search</InputGroup.Button>
-    </InputGroup.Addon>
+<InputGroup.Root class="max-w-3xs">
+	<InputGroup.Input placeholder="Search..." bind:value {maxlength} />
+	<InputGroup.Addon align="inline-end">
+		<InputGroup.Text class='text-xs tabular-nums'>{value.length}/{maxlength}</InputGroup.Text>
+	</InputGroup.Addon>
 </InputGroup.Root>
