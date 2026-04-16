@@ -28,9 +28,8 @@ const inputEntries: InputEntry[] = [
 	{ file: 'pill-shaped.svelte', name: 'Pill Shaped' },
 	{ file: 'button-using-group.svelte', name: 'Button Using Group' },
 	{ file: 'characters-remaining-count.svelte', name: 'Characters Remaining Count' },
-	{ file: 'input-group-keyboard-shortcut.svelte', name: 'Input Group Keyboard Shortcut' },
 	{ file: 'password-input-with-strength-indicator.svelte', name: 'Password Input With Strength Indicator' },
-	{ file: 'password-input-toggle.svelte', name: 'Password Input Toggle' },
+	// { file: 'password-input-toggle.svelte', name: 'Password Input Toggle' },
 	{ file: 'with-custom-border-background.svelte', name: 'With Custom Border Background' }
 ];
 

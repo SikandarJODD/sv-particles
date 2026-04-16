@@ -2,4 +2,4 @@
 	import { Input } from '$lib/components/ui/input/index.js';
 </script>
 
-<Input disabled placeholder="Disabled" type="text" />
+<Input disabled placeholder="Disabled" type="text" class='max-w-xs'/>

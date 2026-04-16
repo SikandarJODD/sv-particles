@@ -39,10 +39,19 @@ const inputGroupEntries: InputGroupEntry[] = [
 	{ file: 'with-clear-button.svelte', name: 'With Clear Button' },
 	{ file: 'search-input-with-loader-and-voice.svelte', name: 'Search Input With Loader And Voice' },
 	{ file: 'with-character-count.svelte', name: 'With Character Count' },
-	{ file: 'password-input-with-strength-inidicator.svelte', name: 'Password Input With Strength Indicator' },
-	{ file: 'code-snippet-with-language-selector.svelte', name: 'Code Snippet With Language Selector' },
+	{
+		file: 'password-input-with-strength-inidicator.svelte',
+		name: 'Password Input With Strength Indicator'
+	},
+	{
+		file: 'code-snippet-with-language-selector.svelte',
+		name: 'Code Snippet With Language Selector'
+	},
 	{ file: 'message-composer-with-attachments.svelte', name: 'Message Composer With Attachments' },
-	{ file: 'chat-input-with-voice-and-send-button.svelte', name: 'Chat Input With Voice And Send Button' },
+	{
+		file: 'chat-input-with-voice-and-send-button.svelte',
+		name: 'Chat Input With Voice And Send Button'
+	},
 	{ file: 'with-start-text-end-tooltip.svelte', name: 'With Start Text End Tooltip' },
 	{ file: 'input-group-with-mimicking-url-bar.svelte', name: 'Input Group With Mimicking URL Bar' },
 	{ file: 'with-keyboard-shortcut-search.svelte', name: 'With Keyboard Shortcut Search' },

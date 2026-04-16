@@ -31,9 +31,8 @@ let files = [
 	'input-group-with-mimicking-url-bar.svelte',
 	'with-keyboard-shortcut-search.svelte',
 	'start-loading-spinner.svelte',
-	'end-loading-spinner.svelte',
+	'end-loading-spinner.svelte'
 ];
-
 
 let targetDir = process.argv[2];
 
@@ -48,16 +47,17 @@ fs.mkdirSync(targetDir, { recursive: true });
 
 let content = `<script lang="ts">
 	import * as InputGroup from "$lib/components/ui/input-group/index.js";
+	import SearchIcon from "@lucide/svelte/icons/search";
 </script>
 
 <InputGroup.Root>
-  <InputGroup.Input placeholder="Search..." />
-  <InputGroup.Addon>
-    <SearchIcon />
-  </InputGroup.Addon>
-  <InputGroup.Addon align="inline-end">
-    <InputGroup.Button>Search</InputGroup.Button>
-  </InputGroup.Addon>
+	<InputGroup.Input placeholder="Search..." />
+	<InputGroup.Addon>
+    	<SearchIcon />
+    </InputGroup.Addon>
+    <InputGroup.Addon align="inline-end">
+        <InputGroup.Button>Search</InputGroup.Button>
+    </InputGroup.Addon>
 </InputGroup.Root>`;
 
 for (const file of files) {

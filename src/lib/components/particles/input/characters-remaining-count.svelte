@@ -7,7 +7,7 @@
 </script>
 
 <Field.Field>
-	<Input {maxlength} placeholder="Enter code" type="text" bind:value />
+	<Input {maxlength} placeholder="Enter code" type="text" bind:value  class='max-w-xs'/>
 	<Field.Description>
 		<span class="tabular-nums">{maxlength - value.length}</span>{' '}
 		characters left
