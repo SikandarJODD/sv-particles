@@ -1,14 +1,21 @@
 <script lang="ts">
 	import * as InputGroup from "$lib/components/ui/input-group/index.js";
-	import SearchIcon from "@lucide/svelte/icons/search";
+	import XIcon from "@lucide/svelte/icons/x";
+
+	let value = $state("");
+
+	let clearValue = () => {
+		value = "";
+	};
 </script>
 
-<InputGroup.Root>
-	<InputGroup.Input placeholder="Search..." />
-	<InputGroup.Addon>
-    	<SearchIcon />
-    </InputGroup.Addon>
-    <InputGroup.Addon align="inline-end">
-        <InputGroup.Button>Search</InputGroup.Button>
-    </InputGroup.Addon>
+<InputGroup.Root class="max-w-3xs">
+	<InputGroup.Input placeholder="Search..." bind:value />
+	{#if value}
+		<InputGroup.Addon align="inline-end">
+			<InputGroup.Button onclick={clearValue}>
+				<XIcon />
+			</InputGroup.Button>
+		</InputGroup.Addon>
+	{/if}
 </InputGroup.Root>

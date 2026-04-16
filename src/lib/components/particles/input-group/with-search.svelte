@@ -3,12 +3,9 @@
 	import SearchIcon from "@lucide/svelte/icons/search";
 </script>
 
-<InputGroup.Root>
+<InputGroup.Root class="max-w-3xs">
 	<InputGroup.Input placeholder="Search..." />
 	<InputGroup.Addon>
     	<SearchIcon />
-    </InputGroup.Addon>
-    <InputGroup.Addon align="inline-end">
-        <InputGroup.Button>Search</InputGroup.Button>
     </InputGroup.Addon>
 </InputGroup.Root>
