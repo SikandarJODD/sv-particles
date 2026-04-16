@@ -11,9 +11,9 @@
 
 <Button variant="ghost" onclick={toggleExpand}>
 	{#if isExpanded}
-		Show Less
+		Show less
 	{:else}
-		Show More
+		Show more
 	{/if}
 	{#if isExpanded}
 		<ChevronUpIcon class="-me-1" />

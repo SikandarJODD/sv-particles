@@ -3,7 +3,7 @@
 	import ThumbsUpIcon from '@lucide/svelte/icons/thumbs-up';
 </script>
 
-<Button>
+<Button variant="outline" class='pe-0'>
 	<ThumbsUpIcon />
 	Like
 	<span

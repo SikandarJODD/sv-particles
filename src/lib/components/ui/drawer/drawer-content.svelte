@@ -31,8 +31,9 @@
 		<div
 			class="mx-auto mt-4 hidden h-1.5 w-[100px] shrink-0 rounded-full bg-muted group-data-[vaul-drawer-direction=bottom]/drawer-content:block"
 		></div>
+		<!-- For Right Content -->
 		<div
-			class="absolute top-1/2 left-3 hidden h-25 w-1.5 shrink-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-muted group-data-[vaul-drawer-direction=right]/drawer-content:block"
+			class="absolute top-1/2 left-3 hidden h-16 w-1.5 shrink-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-muted group-data-[vaul-drawer-direction=right]/drawer-content:block"
 		></div>
 		{@render children?.()}
 	</DrawerPrimitive.Content>

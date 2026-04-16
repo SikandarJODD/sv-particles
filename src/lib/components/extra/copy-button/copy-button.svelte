@@ -60,7 +60,7 @@
 	name="copy"
 	onclick={async () => {
 		const status = await clipboard.copy(text);
-
+		console.log('Copy status:', status);
 		onCopy?.(status);
 	}}
 	{...rest as /* eslint-disable-line @typescript-eslint/no-explicit-any */ any}

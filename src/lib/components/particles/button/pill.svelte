@@ -2,4 +2,4 @@
 	import { Button } from '$lib/components/ui/button';
 </script>
 
-<Button class="rounded-full">Button</Button>
+<Button class="rounded-full">Pill Button</Button>

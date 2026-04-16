@@ -53,12 +53,12 @@
 	}
 
 	:global(pre.shiki) {
-		@apply overflow-x-auto rounded-lg bg-inherit py-4 text-sm;
+		@apply overflow-x-auto rounded-xl bg-inherit py-4 text-sm no-scrollbar;
 	}
 
 	:global(pre.shiki:not([data-code-overflow] *):not([data-code-overflow])) {
 		@apply overflow-y-auto;
-		max-height: min(100%, 650px);
+		/* max-height: min(100%, 650px); */
 	}
 
 	:global(pre.shiki code) {

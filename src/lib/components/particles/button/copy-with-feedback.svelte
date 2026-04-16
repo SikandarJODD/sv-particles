@@ -15,7 +15,6 @@
 <Button
 	aria-label={copied ? 'Copied' : 'Copy to clipboard'}
 	onclick={handleCopy}
-	size="icon"
 	variant="outline"
 >
 	{#if copied}

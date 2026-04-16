@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import { Svelte, TypeScript } from '$lib/icons';
+	import { CopyButton } from '../copy-button';
 	import * as Code from './index';
 	import type { CodeType } from './types';
 	import TerminalIcon from '@lucide/svelte/icons/terminal';
@@ -20,20 +21,24 @@
 		if (code.lang && code.lang in icons) {
 			return icons[code.lang as keyof typeof icons];
 		}
-		return TerminalIcon;
+		return Svelte;
+	});
+
+	let isLargeCode = $derived.by(() => {
+		if (code.code.split('\n').length > 15) return true;
+		return false;
 	});
 </script>
 
-<div class="rounded-lg border border-border">
-	<div class="flex h-9 items-center justify-between border-b border-border px-6">
-		<div class="flex items-center gap-2">
-			<Icon class="size-4" />
-			<span class="text-sm font-medium">{code.filename}</span>
-		</div>
-	</div>
-	<div>
-		<ScrollArea>
-			<Code.Root lang="typescript" class="w-full border-none" {...code} />
-		</ScrollArea>
-	</div>
+<div class="relative overflow-hidden rounded-xl border border-border">
+	<!-- Copy Button -->
+	<CopyButton class="absolute top-2 right-2 z-40 text-muted-foreground" text={code.code} />
+	<ScrollArea
+		class={isLargeCode ? 'h-120 w-full' : 'h-fit'}
+		scrollbarYClasses="h-[96%]! top-2! right-0.5!"
+	>
+		<Code.Root lang={code.lang || 'svelte'} class="size-full border-none" {...code}>
+			<!-- <Code.CopyButton class="top-1 right-1" /> -->
+		</Code.Root>
+	</ScrollArea>
 </div>

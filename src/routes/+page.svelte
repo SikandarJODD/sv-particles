@@ -1,8 +1,12 @@
 <script lang="ts">
 	import Preview from '$lib/components/structure/preview/Preview.svelte';
-	import { data } from '$particles/button/data';
+	import { buttonData } from '$particles/button/data';
 </script>
 
-<div class="flex h-screen w-screen items-center justify-center">
-	<Preview {...data} />
+<div class="p-10">
+	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+		{#each buttonData as item}
+			<Preview {...item} />
+		{/each}
+	</div>
 </div>

@@ -1,10 +1,20 @@
 <script lang="ts">
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
-	import { ModeWatcher, setMode } from 'mode-watcher';
+	import { ModeWatcher, setMode, toggleMode } from 'mode-watcher';
+	import { activeElement, PressedKeys } from 'runed';
 
 	let { children } = $props();
-	setMode('light');
+
+	let keys = new PressedKeys();
+	keys.onKeys(['d'], () => {
+		if (
+			activeElement.current?.localName === 'input' ||
+			activeElement.current?.localName === 'textarea'
+		)
+			return;
+		toggleMode();
+	});
 </script>
 
 <ModeWatcher />

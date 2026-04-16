@@ -6,7 +6,7 @@
 	type Props = {
 		preview: Component;
 		code: CodeType | CodeType[];
-		title: string;
+		name: string;
 		installation_url: string; // for installation command - will use it inside pmcommand
 		folder_structure?: string | undefined; // for showcasing the folder-structue
 	};
@@ -16,10 +16,12 @@
 
 <div>
 	<div>
-		<h2 class="mb-4 text-2xl font-bold">{props.title}</h2>
-		<div class="mb-6 min-h-80 border">
+		<h2 class="text-base">{props.name}</h2>
+		<div class="mb-2 flex min-h-80 items-center justify-center border">
 			<PreviewComponent />
 		</div>
-		<ViewCode {...props} />
+		<div class='flex justify-end'>
+			<ViewCode {...props} />
+		</div>
 	</div>
 </div>
