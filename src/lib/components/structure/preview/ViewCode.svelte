@@ -1,19 +1,23 @@
 <script lang="ts">
-	import type { CodeType } from '$lib/components/extra/code/types';
-	import { Button } from '$lib/components/ui/button';
-	import * as Drawer from '$lib/components/ui/drawer/index.js';
-	import PreviewContent from './PreviewContent.svelte';
+	import type { CodeType } from "$lib/components/extra/code/types";
+	import { Button } from "$lib/components/ui/button";
+	import * as Drawer from "$lib/components/ui/drawer/index.js";
+	import PreviewContent from "./PreviewContent.svelte";
 	type Props = {
 		installation_url: string;
 		code: CodeType | CodeType[];
 		folder_structure?: string | undefined;
 	};
-	let { installation_url, code, folder_structure = '' }: Props = $props();
+	let { installation_url, code, folder_structure = "" }: Props = $props();
 </script>
 
-<Drawer.Root shouldScaleBackground={false} direction="right">
+<Drawer.Root shouldScaleBackground={false} direction="right" handleOnly>
 	<Drawer.Trigger>
-		<Button size="sm" variant="outline" class="rounded-lg bg-transparent text-xs hover:bg-muted!">
+		<Button
+			size="sm"
+			variant="outline"
+			class="rounded-lg bg-transparent text-xs hover:bg-muted!"
+		>
 			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
 				><!-- Icon from Huge Icons by Hugeicons - undefined --><g
 					fill="none"
@@ -34,6 +38,18 @@
 		>
 	</Drawer.Trigger>
 	<Drawer.Content class="data-[vaul-drawer-direction=right]:sm:max-w-4xl">
-		<PreviewContent {installation_url} {code} {folder_structure} />
+		<div data-vaul-no-drag data-view-code-selectable>
+			<PreviewContent {installation_url} {code} {folder_structure} />
+		</div>
 	</Drawer.Content>
 </Drawer.Root>
+
+<style>
+	:global([data-vaul-drawer] [data-view-code-selectable]),
+	:global([data-vaul-drawer] [data-view-code-selectable] pre),
+	:global([data-vaul-drawer] [data-view-code-selectable] code),
+	:global([data-vaul-drawer] [data-view-code-selectable] .shiki),
+	:global([data-vaul-drawer] [data-view-code-selectable] .shiki *) {
+		user-select: text !important;
+	}
+</style>
