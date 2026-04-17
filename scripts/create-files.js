@@ -2,36 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 let files = [
-	'basic-input-group.svelte',
-	'end-icon.svelte',
-	'start-text.svelte',
-	'end-text.svelte',
-	'start-and-end-text.svelte',
-	'end-tooltip.svelte',
-	'keyboard-shortcut.svelte',
-	'with-inner-label.svelte',
-	'disabled.svelte',
-	'loading-spinner.svelte',
-	'with-textarea.svelte',
-	'with-icon-button.svelte',
-	'with-button.svelte',
-	'with-badge.svelte',
-	'with-badge-and-menu.svelte',
-	'mini-editor-group-toggle.svelte',
-	'with-search.svelte',
-	'with-start-tooltip.svelte',
-	'with-clear-button.svelte',
-	'search-input-with-loader-and-voice.svelte',
-	'with-character-count.svelte',
-	'password-input-with-strength-inidicator.svelte',
-	'code-snippet-with-language-selector.svelte',
-	'message-composer-with-attachments.svelte',
-	'chat-input-with-voice-and-send-button.svelte',
-	'with-start-text-end-tooltip.svelte',
-	'input-group-with-mimicking-url-bar.svelte',
-	'with-keyboard-shortcut-search.svelte',
-	'start-loading-spinner.svelte',
-	'end-loading-spinner.svelte'
+	"basic-alert-dialog.svelte",
+	"alert-dialog-with-bare-footer.svelte"
 ];
 
 let targetDir = process.argv[2];
@@ -46,19 +18,25 @@ if (!targetDir) {
 fs.mkdirSync(targetDir, { recursive: true });
 
 let content = `<script lang="ts">
-	import * as InputGroup from "$lib/components/ui/input-group/index.js";
-	import SearchIcon from "@lucide/svelte/icons/search";
+ import * as AlertDialog from "$lib/components/ui/alert-dialog/index.js";
 </script>
 
-<InputGroup.Root>
-	<InputGroup.Input placeholder="Search..." />
-	<InputGroup.Addon>
-    	<SearchIcon />
-    </InputGroup.Addon>
-    <InputGroup.Addon align="inline-end">
-        <InputGroup.Button>Search</InputGroup.Button>
-    </InputGroup.Addon>
-</InputGroup.Root>`;
+<AlertDialog.Root>
+ <AlertDialog.Trigger>Open</AlertDialog.Trigger>
+ <AlertDialog.Content>
+  <AlertDialog.Header>
+   <AlertDialog.Title>Are you absolutely sure?</AlertDialog.Title>
+   <AlertDialog.Description>
+    This action cannot be undone. This will permanently delete your account
+    and remove your data from our servers.
+   </AlertDialog.Description>
+  </AlertDialog.Header>
+  <AlertDialog.Footer>
+   <AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
+   <AlertDialog.Action>Continue</AlertDialog.Action>
+  </AlertDialog.Footer>
+ </AlertDialog.Content>
+</AlertDialog.Root>`;
 
 for (const file of files) {
 	let filePath = path.join(targetDir, file);
