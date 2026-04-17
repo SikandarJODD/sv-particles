@@ -2,7 +2,7 @@
 	import * as InputGroup from "$lib/components/ui/input-group/index.js";
 	import XIcon from "@lucide/svelte/icons/x";
 
-	let value = $state("");
+	let value = $state("Coding is fun");
 
 	let clearValue = () => {
 		value = "";
