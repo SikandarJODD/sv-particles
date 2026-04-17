@@ -1,16 +1,29 @@
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from "node:fs";
+import path from "node:path";
 
 let files = [
-	"basic-alert-dialog.svelte",
-	"alert-dialog-with-bare-footer.svelte"
+	"basic-avatar.svelte",
+	"fallback-only.svelte",
+	"with-different-sizes.svelte",
+	"with-different-radii.svelte",
+	"overlapping-avatar-group.svelte",
+	"small-overlapping-avatar-group.svelte",
+	"large-overlapping-avatar-group.svelte",
+	"with-user-icon-fallback.svelte",
+	"with-emerald-status-dot.svelte",
+	"with-muted-status-dot.svelte",
+	"rounded-with-emerald-status-dot.svelte",
+	"with-notification-badge.svelte",
+	"with-rounded-notification-badge.svelte",
+	"with-verify-badge.svelte",
+
 ];
 
 let targetDir = process.argv[2];
 
 if (!targetDir) {
-	console.log('Please provide a folder path.');
-	console.log('Example: node create-files.js ./src/lib/components/input');
+	console.log("Please provide a folder path.");
+	console.log("Example: node create-files.js ./src/lib/components/input");
 	process.exit(1);
 }
 
@@ -18,25 +31,13 @@ if (!targetDir) {
 fs.mkdirSync(targetDir, { recursive: true });
 
 let content = `<script lang="ts">
- import * as AlertDialog from "$lib/components/ui/alert-dialog/index.js";
+ import * as Avatar from "$lib/components/ui/avatar/index.js";
 </script>
 
-<AlertDialog.Root>
- <AlertDialog.Trigger>Open</AlertDialog.Trigger>
- <AlertDialog.Content>
-  <AlertDialog.Header>
-   <AlertDialog.Title>Are you absolutely sure?</AlertDialog.Title>
-   <AlertDialog.Description>
-    This action cannot be undone. This will permanently delete your account
-    and remove your data from our servers.
-   </AlertDialog.Description>
-  </AlertDialog.Header>
-  <AlertDialog.Footer>
-   <AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
-   <AlertDialog.Action>Continue</AlertDialog.Action>
-  </AlertDialog.Footer>
- </AlertDialog.Content>
-</AlertDialog.Root>`;
+<Avatar.Root>
+ <Avatar.Image src="https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=96&h=96&dpr=2&q=80" alt="@SikandarJODD" />
+ <Avatar.Fallback>SB</Avatar.Fallback>
+</Avatar.Root>`;
 
 for (const file of files) {
 	let filePath = path.join(targetDir, file);
@@ -49,4 +50,4 @@ for (const file of files) {
 	console.log(`File ${file} created.`);
 }
 
-console.log('\n All files created successfully inside ' + targetDir);
+console.log("\n All files created successfully inside " + targetDir);
