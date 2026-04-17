@@ -9,6 +9,7 @@ import NestedRoot from "./drawer-nested.svelte";
 import Close from "./drawer-close.svelte";
 import Trigger from "./drawer-trigger.svelte";
 import Portal from "./drawer-portal.svelte";
+import Handle from "./drawer-handle.svelte";
 
 export {
 	Root,
@@ -22,6 +23,7 @@ export {
 	Trigger,
 	Portal,
 	Close,
+	Handle,
 
 	//
 	Root as Drawer,
@@ -35,4 +37,5 @@ export {
 	Trigger as DrawerTrigger,
 	Portal as DrawerPortal,
 	Close as DrawerClose,
+	Handle as DrawerHandle,
 };
