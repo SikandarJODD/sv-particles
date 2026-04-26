@@ -1,7 +1,16 @@
 import fs from "node:fs";
 import path from "node:path";
 
-let files = ["basic-menubar.svelte"];
+let files = [
+	"basic-menu.svelte",
+	"with-checkbox.svelte",
+	"with-checkbox-items-as-switches.svelte",
+	"with-radio-group.svelte",
+	"with-link.svelte",
+	"with-group-labels.svelte",
+	"nested-menu.svelte",
+	"close-on-click.svelte",
+];
 
 let targetDir = process.argv[2];
 
@@ -14,22 +23,28 @@ if (!targetDir) {
 // Create folder if it does not exist
 fs.mkdirSync(targetDir, { recursive: true });
 
-let content = `<Menubar.Root>
-  <Menubar.Menu>
-    <Menubar.Trigger>File</Menubar.Trigger>
-    <Menubar.Content>
-      <Menubar.Item>
-        New Tab
-        <Menubar.Shortcut>⌘T</Menubar.Shortcut>
-      </Menubar.Item>
-      <Menubar.Item>New Window</Menubar.Item>
-      <Menubar.Separator />
-      <Menubar.Item>Share</Menubar.Item>
-      <Menubar.Separator />
-      <Menubar.Item>Print</Menubar.Item>
-    </Menubar.Content>
-  </Menubar.Menu>
-</Menubar.Root>`;
+let content = `<script lang="ts">
+	import { Button } from "$lib/components/ui/button";
+	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+</script>
+
+<DropdownMenu.Root>
+	<DropdownMenu.Trigger>
+		{#snippet child({ props })}
+			<Button {...props} variant="outline">Open Menu</Button>
+		{/snippet}
+	</DropdownMenu.Trigger>
+	<DropdownMenu.Content>
+		<DropdownMenu.Group>
+			<DropdownMenu.Label>My Account</DropdownMenu.Label>
+			<DropdownMenu.Separator />
+			<DropdownMenu.Item>Profile</DropdownMenu.Item>
+			<DropdownMenu.Item>Billing</DropdownMenu.Item>
+			<DropdownMenu.Item>Team</DropdownMenu.Item>
+			<DropdownMenu.Item>Subscription</DropdownMenu.Item>
+		</DropdownMenu.Group>
+	</DropdownMenu.Content>
+</DropdownMenu.Root>`;
 
 for (const file of files) {
 	let filePath = path.join(targetDir, file);
