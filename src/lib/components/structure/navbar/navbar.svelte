@@ -8,6 +8,7 @@
 		{ href: "/particles/input", label: "input" },
 		{ href: "/particles/input-group", label: "input-group" },
 		{ href: "/particles/alert-dialog", label: "alert-dialog" },
+		{ href: "/particles/menu", label: "menu" },
 	];
 </script>
 
