@@ -2,14 +2,14 @@ import fs from "node:fs";
 import path from "node:path";
 
 let files = [
-	"basic-menu.svelte",
-	"with-checkbox.svelte",
-	"with-checkbox-items-as-switches.svelte",
-	"with-radio-group.svelte",
-	"with-link.svelte",
-	"with-group-labels.svelte",
-	"nested-menu.svelte",
-	"close-on-click.svelte",
+	"basic-otp.svelte",
+	"with-separator.svelte",
+	"with-field-label.svelte",
+	"with-custom-sanitization.svelte",
+	"with-auto-validation.svelte",
+	"alpha-numeric.svelte",
+	"with-placeholder.svelte",
+	"masked-otp-field.svelte",
 ];
 
 let targetDir = process.argv[2];
@@ -24,27 +24,20 @@ if (!targetDir) {
 fs.mkdirSync(targetDir, { recursive: true });
 
 let content = `<script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
+	import * as InputOTP from "$lib/components/ui/input-otp/index.js";
+	import { REGEXP_ONLY_DIGITS_AND_CHARS } from "bits-ui";
 </script>
 
-<DropdownMenu.Root>
-	<DropdownMenu.Trigger>
-		{#snippet child({ props })}
-			<Button {...props} variant="outline">Open Menu</Button>
-		{/snippet}
-	</DropdownMenu.Trigger>
-	<DropdownMenu.Content>
-		<DropdownMenu.Group>
-			<DropdownMenu.Label>My Account</DropdownMenu.Label>
-			<DropdownMenu.Separator />
-			<DropdownMenu.Item>Profile</DropdownMenu.Item>
-			<DropdownMenu.Item>Billing</DropdownMenu.Item>
-			<DropdownMenu.Item>Team</DropdownMenu.Item>
-			<DropdownMenu.Item>Subscription</DropdownMenu.Item>
-		</DropdownMenu.Group>
-	</DropdownMenu.Content>
-</DropdownMenu.Root>`;
+<InputOTP.Root maxlength={6} pattern={REGEXP_ONLY_DIGITS_AND_CHARS}>
+	{#snippet children({ cells })}
+		<InputOTP.Group>
+			{#each cells as cell (cell)}
+				<InputOTP.Slot {cell} />
+			{/each}
+		</InputOTP.Group>
+	{/snippet}
+</InputOTP.Root>
+`;
 
 for (const file of files) {
 	let filePath = path.join(targetDir, file);

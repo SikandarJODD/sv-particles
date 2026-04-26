@@ -19,7 +19,7 @@
 </script>
 
 <Frame class="w-full overflow-hidden border">
-	<FramePanel class="flex  min-h-80 items-center justify-center overflow-hidden">
+	<FramePanel class="flex min-h-80 items-center justify-center overflow-hidden">
 		<PreviewComponent />
 	</FramePanel>
 	<FrameFooter class="flex items-center justify-between pt-1.5 pr-0.5 pb-1 pl-2">

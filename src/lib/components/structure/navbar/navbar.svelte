@@ -7,6 +7,7 @@
 		{ href: "/particles/avatars", label: "avatars" },
 		{ href: "/particles/input", label: "input" },
 		{ href: "/particles/input-group", label: "input-group" },
+		{ href: "/particles/input-otp", label: "input-otp" },
 		{ href: "/particles/alert-dialog", label: "alert-dialog" },
 		{ href: "/particles/menu", label: "menu" },
 	];
