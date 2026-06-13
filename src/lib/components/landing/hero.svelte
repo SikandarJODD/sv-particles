@@ -1,10 +1,9 @@
 <script lang="ts">
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 	import { Button } from "$lib/components/ui/button";
-	import { Svelte } from "$lib/icons";
 </script>
 
-<div class="relative flex h-full min-h-[calc(100vh-7rem)] items-center justify-center">
+<div class="relative flex h-full min-h-[calc(100svh-7.5rem)] md:min-h-[calc(100vh-7rem)] items-center justify-center">
 	<div
 		class="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
 	></div>
@@ -13,9 +12,9 @@
 			<div>
 				<a
 					href="/particles/input-group"
-					class="group mx-auto flex w-fit items-center gap-2 rounded-full border border-teal-500/40 bg-teal-200/60 p-1 pl-4 shadow-md shadow-teal-100 transition-colors duration-300 dark:bg-teal-800/20 dark:shadow-xl dark:shadow-teal-950/30"
+					class="group mx-auto flex w-fit items-center gap-2 rounded-full border border-teal-500/40 bg-teal-200/40 p-1 pl-4 md:shadow-md shadow-teal-100 transition-colors duration-300 dark:bg-teal-800/20 dark:shadow-xl dark:shadow-teal-950/30"
 				>
-					<span class="text-sm text-teal-500">New Input Group Items</span>
+					<span class="text-xs md:text-sm text-teal-500">New Input Group Blocks</span>
 					<div
 						class="size-6 overflow-hidden rounded-full bg-teal-300 duration-500 group-hover:bg-teal-300 dark:bg-teal-900/70 dark:group-hover:bg-teal-900"
 					>
@@ -26,7 +25,7 @@
 								<ArrowRight class="m-auto size-3 -rotate-45  dark:text-teal-300" />
 							</span>
 							<span class="flex size-6">
-								<ArrowRight class="m-auto size-3 -rotate-45" />
+								<ArrowRight class="m-auto size-3 -rotate-45 dark:text-teal-200" />
 							</span>
 						</div>
 					</div>
@@ -34,11 +33,11 @@
 			</div>
 
 			<h1
-				class="mt-8 bg-linear-to-b from-teal-500 to-teal-500 bg-clip-text text-6xl tracking-tight text-balance text-transparent md:text-7xl lg:mt-16 xl:text-[5.25rem] dark:to-white"
+				class="mt-8 bg-linear-to-b font-gp-circle from-teal-500 to-teal-400 bg-clip-text text-6xl tracking-tight text-balance text-transparent md:text-7xl lg:mt-16 xl:text-[5.25rem] dark:to-white"
 			>
 				Svelte Particles
 			</h1>
-			<p class="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground">
+			<p class="mx-auto mt-8 max-w-2xl font-gp-circle text-lg text-muted-foreground">
 				Useful Shadcn Blocks, Built with Svelte, Tailwind CSS and TypeScript.
 			</p>
 
@@ -46,7 +45,7 @@
 				<Button
 					href="/particles/button"
 					size="lg"
-					class="rounded-xl border-none px-5 text-base"
+					class="rounded-full border-none px-5 text-base"
 				>
 					View Components
 				</Button>
@@ -54,7 +53,7 @@
 					href="https://github.com/SikandarJODD/sv-particles"
 					size="lg"
 					variant="secondary"
-					class="h-11 rounded-xl px-5"
+					class="h-11 rounded-full px-5"
 					target="_blank"
 				>
 					<svg viewBox="0 0 1024 1024" fill="none"

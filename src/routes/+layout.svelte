@@ -1,19 +1,19 @@
 <script lang="ts">
-	import "./layout.css";
+	import { goto } from "$app/navigation";
+	import { page } from "$app/state";
 	import favicon from "$lib/assets/favicon.svg";
-	import { goto } from '$app/navigation';
-	import { page } from '$app/state';
+	import Footer from "$lib/components/landing/footer.svelte";
+	import MobileNav from "$lib/components/structure/mobile-nav.svelte";
+	import Navbar from "$lib/components/structure/navbar/navbar.svelte";
+	import ScrollUpButton from "$lib/components/structure/scroll-up-button.svelte";
+	import { getParticleCategoryDirectionTarget, navigationKeys } from "$lib/navigation/nav";
 	import { ModeWatcher, toggleMode } from "mode-watcher";
 	import { activeElement } from "runed";
-	import MobileNav from '$lib/components/structure/mobile-nav.svelte';
-	import Navbar from "$lib/components/structure/navbar/navbar.svelte";
-	import KeyNavigation from '$lib/components/structure/navbar/key-navigation.svelte';
-	import ScrollUpButton from '$lib/components/structure/scroll-up-button.svelte';
-	import Footer from "$lib/components/landing/footer.svelte";
-	import { getParticleCategoryDirectionTarget, navigationKeys } from '$lib/navigation/nav';
+	import "./layout.css";
 
 	let { children } = $props();
-	const isParticles = $derived(page.url.pathname.startsWith('/particles/'));
+
+	const isParticles = $derived(page.url.pathname.startsWith("/particles/"));
 
 	function isTypingElement() {
 		return (
@@ -23,7 +23,7 @@
 		);
 	}
 
-	function navigateParticleCategory(direction: 'next' | 'prev') {
+	function navigateParticleCategory(direction: "next" | "prev") {
 		if (isTypingElement()) {
 			return;
 		}
@@ -41,26 +41,25 @@
 		toggleMode();
 	});
 
-	navigationKeys.onKeys(['ArrowRight'], () => {
-		navigateParticleCategory('next');
+	navigationKeys.onKeys(["ArrowRight"], () => {
+		navigateParticleCategory("next");
 	});
 
-	navigationKeys.onKeys(['ArrowLeft'], () => {
-		navigateParticleCategory('prev');
+	navigationKeys.onKeys(["ArrowLeft"], () => {
+		navigateParticleCategory("prev");
 	});
 </script>
 
-<ModeWatcher defaultMode='dark' />
+<ModeWatcher defaultMode="system" />
 <MobileNav />
 <Navbar />
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<div class='max-w-7xl mx-auto'>
+<div class="mx-auto max-w-7xl">
 	{@render children()}
 </div>
 {#if isParticles}
-	<KeyNavigation />
 	<ScrollUpButton />
 {/if}
 <Footer />
