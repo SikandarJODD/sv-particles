@@ -6,6 +6,8 @@
 	import { navigationKeys, getParticleCategoryDirectionTarget } from "$lib/navigation/nav";
 	import { cn } from "$lib/utils";
 	import { Button } from "$lib/components/ui/button";
+	import ChevronLeftIcon from "@lucide/svelte/icons/chevron-left";
+	import ChevronRightIcon from "@lucide/svelte/icons/chevron-right";
 
 	let canNavigate = $derived(
 		Boolean(
@@ -18,24 +20,32 @@
 	let isRightPressed = $derived(navigationKeys.has("ArrowRight"));
 
 	function getKeyClass(isPressed: boolean) {
-		return cn(
-			isPressed && "scale-95 bg-secondary/70 text-background shadow-md"
-		);
+		return cn("rounded-full",isPressed && "scale-95 bg-secondary/70 text-background shadow-md");
 	}
 </script>
 
 {#if canNavigate}
 	<div
-		class="fixed right-4 bottom-4 z-50 flex items-center gap-2 bg-background/85 backdrop-blur-sm"
+		class="fixed right-4 bottom-4 z-50 flex items-center gap-2 rounded-full p-0.5 backdrop-blur-sm"
 	>
-		<Button variant="secondary" size="icon" class={getKeyClass(isLeftPressed)} href={getParticleCategoryDirectionTarget(page.url.pathname, "prev")?.href}>
-			<Kbd aria-label="Previous category" class='bg-transparent'>
-				<ArrowLeftIcon class="size-5" />
-			</Kbd>
+		<Button
+			variant="outline"
+			size="icon"
+			class={getKeyClass(isLeftPressed)}
+			href={getParticleCategoryDirectionTarget(page.url.pathname, "prev")?.href}
+		>
+			<Kbd aria-label="Previous category" class="bg-transparent">
+				<ChevronLeftIcon class='size-5' strokeWidth="1.4" />
+			</Kbd> 
 		</Button>
-		<Button variant="secondary" size="icon" class={getKeyClass(isRightPressed)} href={getParticleCategoryDirectionTarget(page.url.pathname, "next")?.href}>
-			<Kbd aria-label="Next category" class='bg-transparent'>
-				<ArrowRightIcon class="size-5" />
+		<Button
+			variant="outline"
+			size="icon"
+			class={getKeyClass(isRightPressed)}
+			href={getParticleCategoryDirectionTarget(page.url.pathname, "next")?.href}
+		>
+			<Kbd aria-label="Next category" class="bg-transparent">
+				<ChevronRightIcon class='size-5' strokeWidth="1.4" />
 			</Kbd>
 		</Button>
 	</div>

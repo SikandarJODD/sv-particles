@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 	import { Button } from "$lib/components/ui/button";
+	import { Svelte } from "$lib/icons";
 </script>
 
 <div class="relative flex h-full min-h-[calc(100vh-7rem)] items-center justify-center">
@@ -12,11 +13,11 @@
 			<div>
 				<a
 					href="/particles/input-group"
-					class="group mx-auto flex w-fit items-center gap-2 rounded-full border border-teal-500/40 bg-teal-200/60 p-1 pl-4 shadow-md shadow-teal-100 dark:shadow-teal-950/30 dark:shadow-xl transition-colors duration-300 dark:bg-teal-800/20"
+					class="group mx-auto flex w-fit items-center gap-2 rounded-full border border-teal-500/40 bg-teal-200/60 p-1 pl-4 shadow-md shadow-teal-100 transition-colors duration-300 dark:bg-teal-800/20 dark:shadow-xl dark:shadow-teal-950/30"
 				>
 					<span class="text-sm text-teal-500">New Input Group Items</span>
 					<div
-						class="size-6 overflow-hidden dark:bg-teal-900/70 rounded-full bg-teal-300 duration-500 group-hover:bg-teal-300 dark:group-hover:bg-teal-900"
+						class="size-6 overflow-hidden rounded-full bg-teal-300 duration-500 group-hover:bg-teal-300 dark:bg-teal-900/70 dark:group-hover:bg-teal-900"
 					>
 						<div
 							class="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0"
@@ -32,11 +33,13 @@
 				</a>
 			</div>
 
-			<h1 class="mt-8 text-6xl text-balance md:text-7xl lg:mt-16 xl:text-[5.25rem] text-transparent bg-linear-to-b from-teal-500 dark:to-white to-teal-500 bg-clip-text tracking-tight">
+			<h1
+				class="mt-8 bg-linear-to-b from-teal-500 to-teal-500 bg-clip-text text-6xl tracking-tight text-balance text-transparent md:text-7xl lg:mt-16 xl:text-[5.25rem] dark:to-white"
+			>
 				Svelte Particles
 			</h1>
-			<p class="mx-auto mt-8 max-w-2xl text-lg text-balance text-muted-foreground">
-				Useful Shadcn Blocks, Built with Svelte, TailwindCSS, and TypeScript.
+			<p class="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground">
+				Useful Shadcn Blocks, Built with Svelte, Tailwind CSS and TypeScript.
 			</p>
 
 			<div class="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
