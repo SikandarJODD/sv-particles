@@ -1,6 +1,8 @@
 import { definePageMetaTags } from 'svelte-meta-tags';
 import type { JsonLdProps, MetaTagsProps } from 'svelte-meta-tags';
 
+type StructuredData = NonNullable<JsonLdProps['schema']>;
+
 export const SITE_NAME = 'Svelte Particles';
 export const SITE_URL = 'https://sv-particles.vercel.app';
 export const SITE_GITHUB_URL = 'https://github.com/SikandarJODD/sv-particles';
@@ -57,10 +59,10 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 	particles: {
 		id: 'particles',
 		path: '/particles',
-		title: 'Svelte UI Particles',
+		title: 'UI Particles',
 		description:
 			'Explore reusable Svelte particles built with Svelte 5, Tailwind CSS, and TypeScript. Browse focused UI patterns for buttons, menus, avatars, inputs, OTP fields, and alert dialogs.',
-		heading: 'Svelte Particles Library',
+		heading: 'Particles Library',
 		intro:
 			'Explore focused UI particles for common interface patterns and jump into the category that fits your next interaction, form, or navigation flow.',
 		keywords: ['svelte components', 'ui particles', 'component patterns', 'svelte ui library'],
@@ -69,10 +71,10 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 	menu: {
 		id: 'menu',
 		path: '/particles/menu',
-		title: 'Svelte Menu Particles',
+		title: 'Menu Particles',
 		description:
 			'Browse reusable Svelte menu particles for dropdown actions, nested navigation, links, grouped items, checkbox menus, and radio group selections.',
-		heading: 'Svelte Menu Particles',
+		heading: 'Menu Particles',
 		intro:
 			'Use these menu particles when you need compact action surfaces, layered navigation, or selectable menu states without rebuilding the interaction pattern from scratch.',
 		keywords: ['svelte menu', 'dropdown menu', 'context menu', 'navigation menu'],
@@ -81,10 +83,10 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 	button: {
 		id: 'button',
 		path: '/particles/button',
-		title: 'Svelte Button Particles',
+		title: 'Buttons Particles',
 		description:
 			'Explore Svelte button particles for primary actions, icon buttons, copy interactions, status toggles, navigation controls, and utility button patterns.',
-		heading: 'Svelte Button Particles',
+		heading: 'Buttons Particles',
 		intro:
 			'This collection covers action-first button patterns ranging from simple variants to utility controls, feedback states, and small interaction-rich components.',
 		keywords: ['svelte button', 'button variants', 'icon button', 'action button'],
@@ -93,10 +95,10 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 	avatars: {
 		id: 'avatars',
 		path: '/particles/avatars',
-		title: 'Svelte Avatar Particles',
+		title: 'Avatar Particles',
 		description:
 			'Discover Svelte avatar particles for profile imagery, fallback states, status indicators, overlapping groups, badges, and verification markers.',
-		heading: 'Svelte Avatar Particles',
+		heading: 'Avatar Particles',
 		intro:
 			'Use these avatar particles to present people, teams, and presence states with polished fallbacks, badges, and compact identity-focused layouts.',
 		keywords: ['svelte avatar', 'profile image', 'user badge', 'avatar group'],
@@ -105,10 +107,10 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 	input: {
 		id: 'input',
 		path: '/particles/input',
-		title: 'Svelte Input Particles',
+		title: 'Input Particles',
 		description:
 			'Browse Svelte input particles for labeled fields, password states, pill inputs, file inputs, readonly states, counters, and custom field treatments.',
-		heading: 'Svelte Input Particles',
+		heading: 'Input Particles',
 		intro:
 			'These input particles focus on individual field treatments, helping you compose polished form controls with better labels, states, and small utility behaviors.',
 		keywords: ['svelte input', 'form field', 'text input', 'password input'],
@@ -117,10 +119,10 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 	'input-group': {
 		id: 'input-group',
 		path: '/particles/input-group',
-		title: 'Svelte Input Group Particles',
+		title: 'Input Group Particles',
 		description:
 			'Explore Svelte input group particles that combine fields with icons, buttons, tooltips, loaders, badges, shortcuts, editors, and messaging controls.',
-		heading: 'Svelte Input Group Particles',
+		heading: 'Input Group Particles',
 		intro:
 			'Reach for these patterns when a plain field is not enough and the input needs surrounding controls, affordances, or compositional UI around the core value entry.',
 		keywords: ['svelte input group', 'compound input', 'search bar', 'message composer'],
@@ -129,10 +131,10 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 	'input-otp': {
 		id: 'input-otp',
 		path: '/particles/input-otp',
-		title: 'Svelte OTP Input Particles',
+		title: 'OTP Input Particles',
 		description:
 			'Browse Svelte OTP input particles for verification flows with separators, labels, sanitization, validation, and alphanumeric one-time passcode entry.',
-		heading: 'Svelte OTP Input Particles',
+		heading: 'OTP Input Particles',
 		intro:
 			'These OTP particles are tuned for verification and sign-in flows where segmented input, validation feedback, and clean code entry states matter.',
 		keywords: ['svelte otp input', 'verification code', 'one time password', 'auth ui'],
@@ -141,10 +143,10 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 	'alert-dialog': {
 		id: 'alert-dialog',
 		path: '/particles/alert-dialog',
-		title: 'Svelte Alert Dialog Particles',
+		title: 'Alert Dialog Particles',
 		description:
 			'Explore Svelte alert dialog particles for destructive confirmations, compact decision prompts, and confirmation flows with minimal but clear action framing.',
-		heading: 'Svelte Alert Dialog Particles',
+		heading: 'Alert Dialog Particles',
 		intro:
 			'Use these alert dialog particles for high-importance decisions where the interface needs clear hierarchy, safe defaults, and explicit user confirmation.',
 		keywords: ['svelte alert dialog', 'confirmation modal', 'destructive action', 'dialog pattern'],
@@ -212,7 +214,7 @@ export const buildParticlesPageMetaTags = (
 
 const buildBreadcrumbSchema = (
 	definition: ParticlesRouteDefinition
-): NonNullable<JsonLdProps['schema']> => ({
+): Record<string, unknown> => ({
 	'@context': 'https://schema.org',
 	'@type': 'BreadcrumbList',
 	itemListElement: [
@@ -239,7 +241,7 @@ const buildBreadcrumbSchema = (
 
 const buildCollectionSchema = (
 	definition: ParticlesRouteDefinition
-): NonNullable<JsonLdProps['schema']> => ({
+): Record<string, unknown> => ({
 	'@context': 'https://schema.org',
 	'@type': 'CollectionPage',
 	name: definition.heading,
@@ -285,10 +287,20 @@ const buildCollectionSchema = (
 
 export const buildParticlesPageSchema = (
 	definition: ParticlesRouteDefinition
-): NonNullable<JsonLdProps['schema']> =>
-	definition.id === 'particles'
-		? buildCollectionSchema(definition)
-		: [buildCollectionSchema(definition), buildBreadcrumbSchema(definition)];
+): StructuredData => {
+	const collectionSchema = buildCollectionSchema(definition);
+
+	if (definition.id === 'particles') {
+		return collectionSchema as StructuredData;
+	}
+
+	const pageSchema: Record<string, unknown>[] = [
+		collectionSchema,
+		buildBreadcrumbSchema(definition)
+	];
+
+	return pageSchema as unknown as StructuredData;
+};
 
 export const buildParticlesPageData = (routeId: ParticlesRouteId) => {
 	const definition = particlesSeoRoutes[routeId];

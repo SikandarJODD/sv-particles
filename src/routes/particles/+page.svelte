@@ -10,7 +10,7 @@
 </section>
 
 <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-	{#each data.sections as section}
+	{#each data.sections as section (section.path)}
 		<a
 			href={section.path}
 			class="rounded-xl border bg-card p-5 transition-colors hover:border-primary/40 hover:bg-accent/40"

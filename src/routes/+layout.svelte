@@ -24,7 +24,7 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<div>
+<div class='max-w-7xl mx-auto'>
 	{@render children()}
 </div>
 <Footer />

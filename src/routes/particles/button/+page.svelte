@@ -11,7 +11,7 @@
 	<p class="max-w-3xl text-sm text-muted-foreground md:text-base">{data.intro}</p>
 </section>
 
-<div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+<div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2">
 	{#each buttonData as item (item.id)}
 		<Preview {...item} />
 	{/each}
