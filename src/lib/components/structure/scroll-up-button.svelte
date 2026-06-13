@@ -15,8 +15,8 @@
 		<Button
 			type="button"
 			variant="outline"
-			size="icon"
-			class="fixed bottom-4 left-4 z-50 rounded-full shadow-sm md:top-1/2 md:right-3 md:bottom-auto md:left-auto"
+			size="icon-lg"
+			class="fixed bottom-20 right-7 z-50 rounded-full shadow-none md:top-1/2 md:right-3 md:bottom-auto md:left-auto"
 			aria-label="Scroll to top"
 			title="Scroll to top"
 			onclick={scrollToTop}

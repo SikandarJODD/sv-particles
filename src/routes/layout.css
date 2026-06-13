@@ -1,10 +1,58 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
-@import 'shadcn-svelte/tailwind.css';
-@import '@fontsource-variable/inter';
-@import '@fontsource-variable/geist-mono';
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn-svelte/tailwind.css";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/geist-mono";
 
 @custom-variant dark (&:is(.dark *));
+
+@font-face {
+	font-family: "GeistPixel";
+	src: url("/fonts/GeistPixel-Square.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "GeistPixel Circle";
+	src: url("/fonts/GeistPixel-Circle.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "GeistPixel Grid";
+	src: url("/fonts/GeistPixel-Grid.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "GeistPixel Line";
+	src: url("/fonts/GeistPixel-Line.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "GeistPixel Square";
+	src: url("/fonts/GeistPixel-Square.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "GeistPixel Triangle";
+	src: url("/fonts/GeistPixel-Triangle.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
 
 :root {
 	--background: oklch(1 0 0);
@@ -76,8 +124,15 @@
 }
 
 @theme inline {
-	--font-sans: 'Inter Variable', sans-serif;
-	--font-mono: 'Geist Mono Variable', monospace;
+	--font-sans: "Inter Variable", sans-serif;
+	--font-mono: "Geist Mono Variable", monospace;
+
+	--font-gp: "GeistPixel", monospace;
+	--font-gp-circle: "GeistPixel Circle", monospace;
+	--font-gp-grid: "GeistPixel Grid", monospace;
+	--font-gp-line: "GeistPixel Line", monospace;
+	--font-gp-square: "GeistPixel Square", monospace;
+	--font-gp-triangle: "GeistPixel Triangle", monospace;
 
 	--color-sidebar-ring: var(--sidebar-ring);
 	--color-sidebar-border: var(--sidebar-border);
@@ -124,9 +179,78 @@
 		@apply border-border outline-ring/50;
 	}
 	body {
-		@apply bg-background text-foreground ;
+		@apply bg-background text-foreground;
 	}
 	html {
 		@apply font-sans;
+	}
+}
+
+:root[data-nav-transition]::view-transition-old(root),
+:root[data-nav-transition]::view-transition-new(root) {
+	mix-blend-mode: normal;
+}
+
+:root[data-nav-transition="home-login-forward"]::view-transition-old(root) {
+	animation: slide-out-left 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+:root[data-nav-transition="home-login-forward"]::view-transition-new(root) {
+	animation: slide-in-right 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+:root[data-nav-transition="login-home-back"]::view-transition-old(root) {
+	animation: slide-out-right 280ms cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+
+:root[data-nav-transition="login-home-back"]::view-transition-new(root) {
+	animation: slide-in-left 280ms cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+
+@keyframes slide-out-left {
+	from {
+		opacity: 1;
+		transform: translateX(0) scale(1);
+	}
+
+	to {
+		opacity: 0.82;
+		transform: translateX(-1.5%) scale(0.985);
+	}
+}
+
+@keyframes slide-in-right {
+	from {
+		opacity: 0.92;
+		transform: translateX(100%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes slide-out-right {
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	to {
+		opacity: 0.94;
+		transform: translateX(100%);
+	}
+}
+
+@keyframes slide-in-left {
+	from {
+		opacity: 0.92;
+		transform: translateX(-1.5%) scale(0.99);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0) scale(1);
 	}
 }
