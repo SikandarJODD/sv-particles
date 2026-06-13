@@ -28,12 +28,12 @@
 	<div
 		class="fixed right-4 bottom-4 z-50 flex items-center gap-2 bg-background/85 backdrop-blur-sm"
 	>
-		<Button variant="secondary" size="icon" class={getKeyClass(isLeftPressed)}>
+		<Button variant="secondary" size="icon" class={getKeyClass(isLeftPressed)} href={getParticleCategoryDirectionTarget(page.url.pathname, "prev")?.href}>
 			<Kbd aria-label="Previous category" class='bg-transparent'>
 				<ArrowLeftIcon class="size-5" />
 			</Kbd>
 		</Button>
-		<Button variant="secondary" size="icon" class={getKeyClass(isRightPressed)}>
+		<Button variant="secondary" size="icon" class={getKeyClass(isRightPressed)} href={getParticleCategoryDirectionTarget(page.url.pathname, "next")?.href}>
 			<Kbd aria-label="Next category" class='bg-transparent'>
 				<ArrowRightIcon class="size-5" />
 			</Kbd>
