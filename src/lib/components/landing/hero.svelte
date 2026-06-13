@@ -32,7 +32,7 @@
 				</a>
 			</div>
 
-			<h1 class="mt-8 text-6xl text-balance md:text-7xl lg:mt-16 xl:text-[5.25rem] text-transparent bg-linear-to-b from-teal-500 dark:to-white to-teal-500 bg-clip-text tracking-tighter">
+			<h1 class="mt-8 text-6xl text-balance md:text-7xl lg:mt-16 xl:text-[5.25rem] text-transparent bg-linear-to-b from-teal-500 dark:to-white to-teal-500 bg-clip-text tracking-tight">
 				Svelte Particles
 			</h1>
 			<p class="mx-auto mt-8 max-w-2xl text-lg text-balance text-muted-foreground">

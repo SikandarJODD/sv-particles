@@ -18,23 +18,23 @@ export type ParticleCategoryNavItem = {
 export type NavItem =
 	| {
 			href: '/';
-			label: 'home';
+			label: 'Home';
 	  }
 	| ParticleCategoryNavItem;
 
 export const particleCategoryNavItems: ParticleCategoryNavItem[] = [
-	{ id: 'alert-dialog', href: '/particles/alert-dialog', label: 'alert-dialog' },
-	{ id: 'avatars', href: '/particles/avatars', label: 'avatars' },
-	{ id: 'button', href: '/particles/button', label: 'buttons' },
-	{ id: 'input', href: '/particles/input', label: 'input' },
-	{ id: 'input-group', href: '/particles/input-group', label: 'input-group' },
-	{ id: 'input-otp', href: '/particles/input-otp', label: 'input-otp' },
-	{ id: 'menu', href: '/particles/menu', label: 'menu' }
+	{ id: 'alert-dialog', href: '/particles/alert-dialog', label: 'Alert Dialog' },
+	{ id: 'avatars', href: '/particles/avatars', label: 'Avatars' },
+	{ id: 'button', href: '/particles/button', label: 'Buttons' },
+	{ id: 'input', href: '/particles/input', label: 'Input' },
+	{ id: 'input-group', href: '/particles/input-group', label: 'Input Group' },
+	{ id: 'input-otp', href: '/particles/input-otp', label: 'Input OTP' },
+	{ id: 'menu', href: '/particles/menu', label: 'Menu' }
 ];
 
 export const particleCategoryRouteIds = particleCategoryNavItems.map((item) => item.id);
 
-export const navItems: NavItem[] = [{ href: '/', label: 'home' }, ...particleCategoryNavItems];
+export const navItems: NavItem[] = [{ href: '/', label: 'Home' }, ...particleCategoryNavItems];
 
 export const navigationKeys = new PressedKeys();
 
