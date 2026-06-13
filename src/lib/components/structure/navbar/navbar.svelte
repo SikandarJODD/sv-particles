@@ -13,7 +13,7 @@
 	];
 </script>
 
-<nav class="flex flex-wrap justify-center gap-4 py-2 text-sm">
+<nav class="flex flex-wrap justify-center items-center z-[999] gap-4 h-14 text-sm">
 	{#each items as item (item.href)}
 		<Button variant="ghost" class="font-light" href={item.href}>{item.label}</Button>
 	{/each}

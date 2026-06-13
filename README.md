@@ -1,14 +1,14 @@
 # Svelte Particles
 
-This is a collection of small, self-contained Svelte components
+This is a collection of useful shadcn-svelte blocks.
+Built with Svelte, TailwindCSS, and TypeScript.
 
 Live: [Preview](https://sv-particles.vercel.app/)
 
-Inspired from COSS UI
+Inspired from COSS UI Particles
 
-Goal: To simply create particles using shadcn-svelte and lucide-svelte
+Goal: To simply create particles using shadcn-svelte
 
-## Completed
-1. Button
-2. Input Group
-3. Input
+Built by [Bhide Svelte](https://bhide.dev?utm_source=github&utm_medium=readme&utm_campaign=sv-particles)
+
+Twitter: [@Sikandar_Bhide](https://twitter.com/Sikandar_Bhide)

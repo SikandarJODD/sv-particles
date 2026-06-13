@@ -4,6 +4,7 @@
 	import { ModeWatcher, setMode, toggleMode } from "mode-watcher";
 	import { activeElement, PressedKeys } from "runed";
 	import Navbar from "$lib/components/structure/navbar/navbar.svelte";
+	import Footer from "$lib/components/landing/footer.svelte";
 
 	let { children } = $props();
 
@@ -19,10 +20,11 @@
 </script>
 
 <Navbar />
-<ModeWatcher />
+<ModeWatcher defaultMode='dark' />
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 <div>
 	{@render children()}
 </div>
+<Footer />
