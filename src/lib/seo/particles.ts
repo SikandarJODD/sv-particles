@@ -1,5 +1,6 @@
 import { definePageMetaTags } from 'svelte-meta-tags';
 import type { JsonLdProps, MetaTagsProps } from 'svelte-meta-tags';
+import { particleCategoryRouteIds, type ParticleCategoryRouteId } from '$lib/navigation/nav';
 
 type StructuredData = NonNullable<JsonLdProps['schema']>;
 
@@ -13,13 +14,7 @@ export const SITE_TITLE_TEMPLATE = `%s | ${SITE_NAME}`;
 
 type ParticlesRouteId =
 	| 'particles'
-	| 'menu'
-	| 'button'
-	| 'avatars'
-	| 'input'
-	| 'input-group'
-	| 'input-otp'
-	| 'alert-dialog';
+	| ParticleCategoryRouteId;
 
 type ParticlesRouteDefinition = {
 	id: ParticlesRouteId;
@@ -154,16 +149,7 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 	}
 };
 
-export const particlesRouteOrder: ParticlesRouteId[] = [
-	'particles',
-	'menu',
-	'button',
-	'avatars',
-	'input',
-	'input-group',
-	'input-otp',
-	'alert-dialog'
-];
+export const particlesRouteOrder: ParticlesRouteId[] = ['particles', ...particleCategoryRouteIds];
 
 export const particlesLeafRoutes = particlesRouteOrder
 	.filter((id) => id !== 'particles')
