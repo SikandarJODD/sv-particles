@@ -1,9 +1,9 @@
 <script lang="ts">
+	import Hero from "$lib/components/landing/hero.svelte";
 </script>
 
-<div>
-	<h1>Hello</h1>
-</div>
-
-<style>
-</style>
+<svelte:head>
+  	<title>Svelte Particles</title>
+	<meta name="description" content="Useful Shadcn Blocks, Built with Svelte, TailwindCSS, and TypeScript." />
+</svelte:head>
+<Hero />

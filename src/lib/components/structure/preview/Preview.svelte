@@ -18,8 +18,8 @@
 	let PreviewComponent = $derived(props.preview);
 </script>
 
-<Frame class="w-full overflow-hidden border">
-	<FramePanel class="flex min-h-80 items-center justify-center overflow-hidden">
+<Frame class="w-full overflow-hidden border dark:bg-card/80 bg-secondary">
+	<FramePanel class="flex min-h-80 items-center justify-center overflow-hidden border-secondary">
 		<PreviewComponent />
 	</FramePanel>
 	<FrameFooter class="flex items-center justify-between pt-1.5 pr-0.5 pb-1 pl-2">
