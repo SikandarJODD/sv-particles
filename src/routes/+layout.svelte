@@ -5,6 +5,7 @@
 	import { page } from '$app/state';
 	import { ModeWatcher, toggleMode } from "mode-watcher";
 	import { activeElement } from "runed";
+	import MobileNav from '$lib/components/structure/mobile-nav.svelte';
 	import Navbar from "$lib/components/structure/navbar/navbar.svelte";
 	import KeyNavigation from '$lib/components/structure/navbar/key-navigation.svelte';
 	import ScrollUpButton from '$lib/components/structure/scroll-up-button.svelte';
@@ -49,8 +50,9 @@
 	});
 </script>
 
-<Navbar />
 <ModeWatcher defaultMode='dark' />
+<MobileNav />
+<Navbar />
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
