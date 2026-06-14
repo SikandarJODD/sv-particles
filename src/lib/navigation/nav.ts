@@ -1,6 +1,7 @@
 import { PressedKeys } from 'runed';
 
 export type ParticleCategoryRouteId =
+	| 'accordion'
 	| 'alert-dialog'
 	| 'avatars'
 	| 'button'
@@ -23,6 +24,7 @@ export type NavItem =
 	| ParticleCategoryNavItem;
 
 export const particleCategoryNavItems: ParticleCategoryNavItem[] = [
+	{ id: 'accordion', href: '/particles/accordion', label: 'Accordion' },
 	{ id: 'alert-dialog', href: '/particles/alert-dialog', label: 'Alert Dialog' },
 	{ id: 'avatars', href: '/particles/avatars', label: 'Avatars' },
 	{ id: 'button', href: '/particles/button', label: 'Buttons' },

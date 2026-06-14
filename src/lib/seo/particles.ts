@@ -56,12 +56,24 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 		path: '/particles',
 		title: 'UI Particles',
 		description:
-			'Explore reusable Svelte particles built with Svelte 5, Tailwind CSS, and TypeScript. Browse focused UI patterns for buttons, menus, avatars, inputs, OTP fields, and alert dialogs.',
+			'Explore reusable Svelte particles built with Svelte 5, Tailwind CSS, and TypeScript. Browse focused UI patterns for accordions, buttons, menus, avatars, inputs, OTP fields, and alert dialogs.',
 		heading: 'Particles Library',
 		intro:
 			'Explore focused UI particles for common interface patterns and jump into the category that fits your next interaction, form, or navigation flow.',
 		keywords: ['svelte components', 'ui particles', 'component patterns', 'svelte ui library'],
 		breadcrumb: 'Particles'
+	},
+	accordion: {
+		id: 'accordion',
+		path: '/particles/accordion',
+		title: 'Accordion Particles',
+		description:
+			'Browse reusable Svelte accordion particles for single-panel disclosure, multiple expanded sections, and controlled accordion state patterns.',
+		heading: 'Accordion Particles',
+		intro:
+			'Use these accordion particles when content needs progressive disclosure, FAQ-style grouping, or externally controlled open state without rebuilding the interaction pattern.',
+		keywords: ['svelte accordion', 'disclosure', 'faq accordion', 'collapsible sections'],
+		breadcrumb: 'Accordion'
 	},
 	menu: {
 		id: 'menu',
