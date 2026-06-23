@@ -2,14 +2,10 @@ import fs from "node:fs";
 import path from "node:path";
 
 let files = [
-	"basic-otp.svelte",
-	"with-separator.svelte",
-	"with-field-label.svelte",
-	"with-custom-sanitization.svelte",
-	"with-auto-validation.svelte",
-	"alpha-numeric.svelte",
-	"with-placeholder.svelte",
-	"masked-otp-field.svelte",
+	"basic.svelte",
+	"with-one-panel.svelte",
+	"multiple-panels.svelte",
+	"controlled.svelte",
 ];
 
 let targetDir = process.argv[2];

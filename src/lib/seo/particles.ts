@@ -4,7 +4,7 @@ import { particleCategoryRouteIds, type ParticleCategoryRouteId } from '$lib/nav
 
 type StructuredData = NonNullable<JsonLdProps['schema']>;
 
-export const SITE_NAME = 'Svelte Particles';
+export const SITE_NAME = 'Svelte Qblocks';
 export const SITE_URL = 'https://sv-particles.vercel.app';
 export const SITE_GITHUB_URL = 'https://github.com/SikandarJODD/sv-particles';
 export const SITE_TWITTER_HANDLE = '@Sikandar_Bhide';
@@ -28,11 +28,12 @@ type ParticlesRouteDefinition = {
 };
 
 const SHARED_KEYWORDS = [
-	'svelte particles',
-	'svelte 5',
-	'shared UI patterns',
-	'shadcn svelte',
-	'tailwind css',
+	'svelte shadcn blocks',
+	'svelte shadcn components',
+	'shadcn-svelte blocks',
+	'svelte 5 components',
+	'tailwind css components',
+	'shared ui patterns',
 	'typescript'
 ];
 
@@ -54,97 +55,114 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 	particles: {
 		id: 'particles',
 		path: '/particles',
-		title: 'UI Particles',
+		title: 'Svelte Shadcn Blocks',
 		description:
-			'Explore reusable Svelte particles built with Svelte 5, Tailwind CSS, and TypeScript. Browse focused UI patterns for buttons, menus, avatars, inputs, OTP fields, and alert dialogs.',
-		heading: 'Particles Library',
+			'Browse shadcn-svelte blocks and reusable Svelte components built with Svelte 5, Tailwind CSS, and TypeScript.',
+		heading: 'Svelte Shadcn Blocks',
 		intro:
-			'Explore focused UI particles for common interface patterns and jump into the category that fits your next interaction, form, or navigation flow.',
-		keywords: ['svelte components', 'ui particles', 'component patterns', 'svelte ui library'],
-		breadcrumb: 'Particles'
+			'Explore Qblocks, a growing library of shadcn-svelte blocks and reusable Svelte components for forms, menus, dialogs, buttons, and other common UI patterns.',
+		keywords: [
+			'svelte ui blocks',
+			'svelte component blocks',
+			'shadcn-svelte components',
+			'reusable svelte components'
+		],
+		breadcrumb: 'Blocks'
+	},
+	accordion: {
+		id: 'accordion',
+		path: '/particles/accordion',
+		title: 'Accordion Blocks',
+		description:
+			'Reusable shadcn-svelte accordion blocks and Svelte components for FAQs, disclosure panels, and controlled sections.',
+		heading: 'Accordion Blocks',
+		intro:
+			'Use these accordion blocks when content needs progressive disclosure, FAQ-style grouping, or externally controlled open state without rebuilding the interaction pattern.',
+		keywords: ['svelte accordion blocks', 'shadcn-svelte accordion', 'faq accordion', 'collapsible sections'],
+		breadcrumb: 'Accordion'
 	},
 	menu: {
 		id: 'menu',
 		path: '/particles/menu',
-		title: 'Menu Particles',
+		title: 'Menu Blocks',
 		description:
-			'Browse reusable Svelte menu particles for dropdown actions, nested navigation, links, grouped items, checkbox menus, and radio group selections.',
-		heading: 'Menu Particles',
+			'Reusable shadcn-svelte menu blocks and Svelte components for actions, links, nested items, and selectable options.',
+		heading: 'Menu Blocks',
 		intro:
-			'Use these menu particles when you need compact action surfaces, layered navigation, or selectable menu states without rebuilding the interaction pattern from scratch.',
-		keywords: ['svelte menu', 'dropdown menu', 'context menu', 'navigation menu'],
+			'Use these menu blocks when you need compact action surfaces, layered navigation, or selectable menu states without rebuilding the interaction pattern from scratch.',
+		keywords: ['svelte menu blocks', 'dropdown menu', 'context menu', 'navigation menu'],
 		breadcrumb: 'Menu'
 	},
 	button: {
 		id: 'button',
 		path: '/particles/button',
-		title: 'Buttons Particles',
+		title: 'Button Blocks',
 		description:
-			'Explore Svelte button particles for primary actions, icon buttons, copy interactions, status toggles, navigation controls, and utility button patterns.',
-		heading: 'Buttons Particles',
+			'Reusable shadcn-svelte button blocks and Svelte components for primary actions, icons, toggles, and utility controls.',
+		heading: 'Button Blocks',
 		intro:
-			'This collection covers action-first button patterns ranging from simple variants to utility controls, feedback states, and small interaction-rich components.',
-		keywords: ['svelte button', 'button variants', 'icon button', 'action button'],
+			'This collection covers action-first button blocks ranging from simple variants to utility controls, feedback states, and small interaction-rich components.',
+		keywords: ['svelte button blocks', 'button variants', 'icon button', 'action button'],
 		breadcrumb: 'Button'
 	},
 	avatars: {
 		id: 'avatars',
 		path: '/particles/avatars',
-		title: 'Avatar Particles',
+		title: 'Avatar Blocks',
 		description:
-			'Discover Svelte avatar particles for profile imagery, fallback states, status indicators, overlapping groups, badges, and verification markers.',
-		heading: 'Avatar Particles',
+			'Reusable shadcn-svelte avatar blocks and Svelte components for profiles, groups, badges, and status states.',
+		heading: 'Avatar Blocks',
 		intro:
-			'Use these avatar particles to present people, teams, and presence states with polished fallbacks, badges, and compact identity-focused layouts.',
-		keywords: ['svelte avatar', 'profile image', 'user badge', 'avatar group'],
+			'Use these avatar blocks to present people, teams, and presence states with polished fallbacks, badges, and compact identity-focused layouts.',
+		keywords: ['svelte avatar blocks', 'profile image', 'user badge', 'avatar group'],
 		breadcrumb: 'Avatars'
 	},
 	input: {
 		id: 'input',
 		path: '/particles/input',
-		title: 'Input Particles',
+		title: 'Input Blocks',
 		description:
-			'Browse Svelte input particles for labeled fields, password states, pill inputs, file inputs, readonly states, counters, and custom field treatments.',
-		heading: 'Input Particles',
+			'Reusable shadcn-svelte input blocks and Svelte components for labels, passwords, files, counters, and custom field styles.',
+		heading: 'Input Blocks',
 		intro:
-			'These input particles focus on individual field treatments, helping you compose polished form controls with better labels, states, and small utility behaviors.',
-		keywords: ['svelte input', 'form field', 'text input', 'password input'],
+			'These input blocks focus on individual field treatments, helping you compose polished form controls with better labels, states, and small utility behaviors.',
+		keywords: ['svelte input blocks', 'form field', 'text input', 'password input'],
 		breadcrumb: 'Input'
 	},
 	'input-group': {
 		id: 'input-group',
 		path: '/particles/input-group',
-		title: 'Input Group Particles',
+		title: 'Input Group Blocks',
 		description:
-			'Explore Svelte input group particles that combine fields with icons, buttons, tooltips, loaders, badges, shortcuts, editors, and messaging controls.',
-		heading: 'Input Group Particles',
+			'Reusable shadcn-svelte input group blocks and Svelte components with icons, buttons, badges, tooltips, and loaders.',
+		heading: 'Input Group Blocks',
 		intro:
-			'Reach for these patterns when a plain field is not enough and the input needs surrounding controls, affordances, or compositional UI around the core value entry.',
-		keywords: ['svelte input group', 'compound input', 'search bar', 'message composer'],
+			'Reach for these blocks when a plain field is not enough and the input needs surrounding controls, affordances, or compositional UI around the core value entry.',
+		keywords: ['svelte input group blocks', 'compound input', 'search bar', 'message composer'],
 		breadcrumb: 'Input Group'
 	},
 	'input-otp': {
 		id: 'input-otp',
 		path: '/particles/input-otp',
-		title: 'OTP Input Particles',
+		title: 'OTP Input Blocks',
 		description:
-			'Browse Svelte OTP input particles for verification flows with separators, labels, sanitization, validation, and alphanumeric one-time passcode entry.',
-		heading: 'OTP Input Particles',
+			'Reusable shadcn-svelte OTP input blocks and Svelte components for code entry, validation, labels, and separators.',
+		heading: 'OTP Input Blocks',
 		intro:
-			'These OTP particles are tuned for verification and sign-in flows where segmented input, validation feedback, and clean code entry states matter.',
-		keywords: ['svelte otp input', 'verification code', 'one time password', 'auth ui'],
+			'These OTP input blocks are tuned for verification and sign-in flows where segmented input, validation feedback, and clean code entry states matter.',
+		keywords: ['svelte otp input blocks', 'verification code', 'one time password', 'auth ui'],
 		breadcrumb: 'Input OTP'
 	},
 	'alert-dialog': {
 		id: 'alert-dialog',
 		path: '/particles/alert-dialog',
-		title: 'Alert Dialog Particles',
+		title: 'Alert Dialog Blocks',
 		description:
-			'Explore Svelte alert dialog particles for destructive confirmations, compact decision prompts, and confirmation flows with minimal but clear action framing.',
-		heading: 'Alert Dialog Particles',
+			'Reusable shadcn-svelte alert dialog blocks and Svelte components for confirmations, warnings, and destructive actions.',
+		heading: 'Alert Dialog Blocks',
 		intro:
-			'Use these alert dialog particles for high-importance decisions where the interface needs clear hierarchy, safe defaults, and explicit user confirmation.',
-		keywords: ['svelte alert dialog', 'confirmation modal', 'destructive action', 'dialog pattern'],
+			'Use these alert dialog blocks for high-importance decisions where the interface needs clear hierarchy, safe defaults, and explicit user confirmation.',
+		keywords: ['svelte alert dialog blocks', 'confirmation modal', 'destructive action', 'dialog pattern'],
 		breadcrumb: 'Alert Dialog'
 	}
 };
