@@ -35,10 +35,11 @@
 			<h1
 				class="mt-8 bg-linear-to-b font-gp-circle from-teal-500 to-teal-400 bg-clip-text text-6xl tracking-tight text-balance text-transparent md:text-7xl lg:mt-16 xl:text-[5.25rem] dark:to-white"
 			>
-				Svelte Particles
+				Svelte Qblocks
 			</h1>
 			<p class="mx-auto mt-8 max-w-2xl font-gp-circle text-lg text-muted-foreground">
-				Useful Shadcn Blocks, Built with Svelte, Tailwind CSS and TypeScript.
+				Useful Shadcn-Svelte blocks built with Svelte 5, Tailwind CSS and
+				TypeScript.
 			</p>
 
 			<div class="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">

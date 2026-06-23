@@ -3,7 +3,10 @@
 </script>
 
 <svelte:head>
-  	<title>Svelte Particles</title>
-	<meta name="description" content="Useful Shadcn Blocks, Built with Svelte, TailwindCSS, and TypeScript." />
+	<title>Svelte Qblocks - Svelte Shadcn Blocks and Components</title>
+	<meta
+		name="description"
+		content="Shadcn-Svelte blocks and components built with Svelte 5, Tailwind CSS, and TypeScript."
+	/>
 </svelte:head>
 <Hero />
