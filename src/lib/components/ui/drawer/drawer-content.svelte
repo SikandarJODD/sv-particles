@@ -6,6 +6,9 @@
 	import { cn } from "$lib/utils.js";
 	import type { ComponentProps } from "svelte";
 	import type { WithoutChildrenOrChild } from "$lib/utils.js";
+	import DrawerClose from "./drawer-close.svelte";
+	import Button from "../button/button.svelte";
+	import { X } from "@lucide/svelte";
 
 	let {
 		ref = $bindable(null),
@@ -29,6 +32,11 @@
 		)}
 		{...restProps}
 	>
+		<DrawerClose>
+			<Button size="icon-sm" variant="outline" class="text-muted-foreground absolute rounded-full top-3 right-6">
+				<X class="size-4" />
+			</Button>
+		</DrawerClose>
 		<DrawerHandle
 			preventCycle={true}
 			class="mx-auto! mt-4 hidden! h-1.5! w-[100px]! shrink-0 rounded-full bg-muted! group-data-[vaul-drawer-direction=bottom]/drawer-content:block!"
@@ -39,7 +47,7 @@
 			class="absolute! top-1/2 left-3 hidden! h-full! w-8! shrink-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent! group-data-[vaul-drawer-direction=right]/drawer-content:block!"
 		>
 			<div
-				class="absolute! top-1/2 left-4 hidden! h-16! w-1.5! shrink-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-muted! group-data-[vaul-drawer-direction=right]/drawer-content:block!"
+				class="absolute! top-1/2 left-4 hidden! h-16! w-1.5! shrink-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-neutral-300! group-data-[vaul-drawer-direction=right]/drawer-content:block!"
 			></div>
 		</DrawerHandle>
 		{@render children?.()}

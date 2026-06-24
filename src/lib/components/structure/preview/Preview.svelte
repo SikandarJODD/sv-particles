@@ -1,11 +1,10 @@
 <script lang="ts">
 	import type { CodeType } from "$lib/components/extra/code/types";
-	import { CopyButton } from "$lib/components/extra/copy-button";
 	import type { Component } from "svelte";
-	import ClipboardIcon from "@lucide/svelte/icons/clipboard";
 	import InfoIcon from "@lucide/svelte/icons/info";
 	import { Frame, FrameFooter, FramePanel, FrameTitle } from "$lib/components/ui/frame";
 	import ViewCode from "./ViewCode.svelte";
+	import { page } from "$app/state";
 
 	type Props = {
 		preview: Component;
@@ -16,9 +15,11 @@
 	};
 	let props: Props = $props();
 	let PreviewComponent = $derived(props.preview);
+	let id = $derived(props.name.toLowerCase().replace(/\s+/g, "-")+"-"+page.url.pathname.split('/').pop());
+	$inspect(id, "id");
 </script>
 
-<Frame class="w-full overflow-hidden border dark:bg-card/80 bg-secondary">
+<Frame class="w-full overflow-hidden border bg-secondary dark:bg-card/80">
 	<FramePanel class="flex min-h-80 items-center justify-center overflow-hidden border-secondary">
 		<PreviewComponent />
 	</FramePanel>
@@ -29,6 +30,6 @@
 				>{props.name}</FrameTitle
 			>
 		</div>
-		<ViewCode {...props} />
+		<ViewCode bind:id {...props} />
 	</FrameFooter>
 </Frame>

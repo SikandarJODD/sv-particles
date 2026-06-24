@@ -3,7 +3,7 @@
 	import { Button } from "$lib/components/ui/button";
 </script>
 
-<div class="relative flex h-full min-h-[calc(100svh-7.5rem)] md:min-h-[calc(100vh-7rem)] items-center justify-center">
+<div class="relative flex h-full min-h-[calc(100svh-7.5rem)] md:min-h-[calc(100vh-15rem)] items-center justify-center">
 	<div
 		class="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
 	></div>
