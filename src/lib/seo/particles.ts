@@ -176,6 +176,18 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 			'Use these alert dialog blocks for high-importance decisions where the interface needs clear hierarchy, safe defaults, and explicit user confirmation.',
 		keywords: ['svelte alert dialog blocks', 'confirmation modal', 'destructive action', 'dialog pattern'],
 		breadcrumb: 'Alert Dialog'
+	},
+	tabs: {
+		id: 'tabs',
+		path: '/particles/tabs',
+		title: 'Tabs Blocks',
+		description:
+			'Reusable shadcn-svelte tabs blocks and Svelte components for navigation, content grouping, and stateful sections.',
+		heading: 'Tabs Blocks',
+		intro:
+			'These tabs blocks are designed for organizing content into manageable sections, allowing users to switch between different views or categories without leaving the page.',
+		keywords: ['svelte tabs blocks', 'tabbed navigation', 'content grouping', 'stateful sections'],
+		breadcrumb: 'Tabs'
 	}
 };
 
@@ -267,15 +279,15 @@ const buildCollectionSchema = (
 	isPartOf:
 		definition.id === 'particles'
 			? {
-					'@type': 'WebSite',
-					name: SITE_NAME,
-					url: SITE_URL
-				}
+				'@type': 'WebSite',
+				name: SITE_NAME,
+				url: SITE_URL
+			}
 			: {
-					'@type': 'CollectionPage',
-					name: particlesSeoRoutes.particles.heading,
-					url: toAbsoluteUrl(particlesSeoRoutes.particles.path)
-				},
+				'@type': 'CollectionPage',
+				name: particlesSeoRoutes.particles.heading,
+				url: toAbsoluteUrl(particlesSeoRoutes.particles.path)
+			},
 	about: {
 		'@type': 'SoftwareSourceCode',
 		name: SITE_NAME,
@@ -288,15 +300,15 @@ const buildCollectionSchema = (
 	mainEntity:
 		definition.id === 'particles'
 			? {
-					'@type': 'ItemList',
-					itemListElement: particlesLeafRoutes.map((route, index) => ({
-						'@type': 'ListItem',
-						position: index + 1,
-						name: route.heading,
-						url: toAbsoluteUrl(route.path),
-						description: route.description
-					}))
-				}
+				'@type': 'ItemList',
+				itemListElement: particlesLeafRoutes.map((route, index) => ({
+					'@type': 'ListItem',
+					position: index + 1,
+					name: route.heading,
+					url: toAbsoluteUrl(route.path),
+					description: route.description
+				}))
+			}
 			: undefined,
 	keywords: [...SHARED_KEYWORDS, ...definition.keywords].join(', ')
 });

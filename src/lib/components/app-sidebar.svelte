@@ -83,6 +83,12 @@
 					url: "/particles/menu",
 					count: 7,
 				},
+				{
+					title: "Tabs",
+					url: "/particles/tabs",
+					count: 20,
+					badge: "beta",
+				},
 			],
 		},
 	];
@@ -116,6 +122,18 @@
 													<Badge
 														variant="emerald"
 														class="rounded-full px-2 text-xs">New</Badge
+													>
+												{:else if item.badge === "updated"}
+													<Badge
+														variant="blue"
+														class="rounded-full px-2 text-xs"
+														>Updated</Badge
+													>
+												{:else if item.badge === "beta"}
+													<Badge
+														variant="yellow"
+														class="rounded-full px-2 text-xs"
+														>Beta</Badge
 													>
 												{/if}
 												<span
