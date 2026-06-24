@@ -2,10 +2,14 @@ import fs from "node:fs";
 import path from "node:path";
 
 let files = [
-	"basic.svelte",
-	"with-one-panel.svelte",
-	"multiple-panels.svelte",
-	"controlled.svelte",
+	"banner-5.md",
+	"banner-6.md",
+	"banner-7.md",
+	"banner-8.md",
+	"banner-9.md",
+	"banner-10.md",
+	"banner-11.md",
+	"banner-12.md",
 ];
 
 let targetDir = process.argv[2];
@@ -19,21 +23,7 @@ if (!targetDir) {
 // Create folder if it does not exist
 fs.mkdirSync(targetDir, { recursive: true });
 
-let content = `<script lang="ts">
-	import * as InputOTP from "$lib/components/ui/input-otp/index.js";
-	import { REGEXP_ONLY_DIGITS_AND_CHARS } from "bits-ui";
-</script>
-
-<InputOTP.Root maxlength={6} pattern={REGEXP_ONLY_DIGITS_AND_CHARS}>
-	{#snippet children({ cells })}
-		<InputOTP.Group>
-			{#each cells as cell (cell)}
-				<InputOTP.Slot {cell} />
-			{/each}
-		</InputOTP.Group>
-	{/snippet}
-</InputOTP.Root>
-`;
+let content = ``;
 
 for (const file of files) {
 	let filePath = path.join(targetDir, file);

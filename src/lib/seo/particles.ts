@@ -117,6 +117,18 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 		keywords: ['svelte avatar blocks', 'profile image', 'user badge', 'avatar group'],
 		breadcrumb: 'Avatars'
 	},
+	banner: {
+		id: 'banner',
+		path: '/particles/banner',
+		title: 'Banner Blocks',
+		description:
+			'Reusable shadcn-svelte banner blocks and Svelte components for announcements, offers, release updates, and dismissible promo strips.',
+		heading: 'Banner Blocks',
+		intro:
+			'Use these banner blocks for top-of-page announcements, lightweight promotions, release notices, and other wide messaging surfaces that need clear hierarchy and compact actions.',
+		keywords: ['svelte banner blocks', 'announcement bar', 'promo banner', 'notification strip'],
+		breadcrumb: 'Banner'
+	},
 	input: {
 		id: 'input',
 		path: '/particles/input',

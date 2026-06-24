@@ -4,6 +4,7 @@ export type ParticleCategoryRouteId =
 	| 'accordion'
 	| 'alert-dialog'
 	| 'avatars'
+	| 'banner'
 	| 'button'
 	| 'input'
 	| 'input-group'
@@ -27,6 +28,7 @@ export const particleCategoryNavItems: ParticleCategoryNavItem[] = [
 	{ id: 'accordion', href: '/particles/accordion', label: 'Accordion' },
 	{ id: 'alert-dialog', href: '/particles/alert-dialog', label: 'Alert Dialog' },
 	{ id: 'avatars', href: '/particles/avatars', label: 'Avatars' },
+	{ id: 'banner', href: '/particles/banner', label: 'Banner' },
 	{ id: 'button', href: '/particles/button', label: 'Buttons' },
 	{ id: 'input', href: '/particles/input', label: 'Input' },
 	{ id: 'input-group', href: '/particles/input-group', label: 'Input Group' },
