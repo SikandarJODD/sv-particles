@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Svelte Qblocks - Svelte Shadcn Blocks and Components</title>
+	<title>Svelte QBlocks - Svelte Shadcn Blocks and Components</title>
 	<meta
 		name="description"
 		content="Shadcn-Svelte blocks and components built with Svelte 5, Tailwind CSS, and TypeScript."

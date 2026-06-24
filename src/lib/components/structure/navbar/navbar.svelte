@@ -7,7 +7,10 @@
 <div
 	class="sticky top-0 z-50 hidden h-14 w-full border-b bg-background/70 backdrop-blur-md md:flex"
 >
-	<nav class="z-50 mx-auto flex h-full w-full max-w-4xl items-center justify-between">
+	<nav class="z-50 mx-auto flex h-full w-full max-w-5xl items-center justify-between">
+		<div>
+			<a href="/" class='font-mono text-sm text-transparent bg-clip-text bg-linear-to-tr font-medium from-white to-teal-500'>Svelte QBlocks</a>
+		</div>
 		<div class="flex items-center gap-1.5">
 			{#each desktopNav as item}
 				<Button variant="ghost" class="font-light" href={item.href}>{item.name}</Button>

@@ -3,6 +3,7 @@
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
 	import type { ComponentProps } from "svelte";
 	import Badge from "./spell/badge/badge.svelte";
+	import { cn } from "$lib/utils";
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 	// {
@@ -23,6 +24,7 @@
 	type SubSidebarItem = {
 		title: string;
 		url: string;
+		count: number;
 		badge?: "new" | "updated" | "beta";
 	};
 	type SidebarItem = {
@@ -38,39 +40,48 @@
 				{
 					title: "Accordion",
 					url: "/particles/accordion",
+					count: 4,
 				},
 				{
 					title: "Alert Dialog",
 					url: "/particles/alert-dialog",
+					count: 2,
 				},
 				{
 					title: "Avatars",
 					url: "/particles/avatars",
+					count: 14,
 				},
 				{
 					title: "Banner",
 					url: "/particles/banner",
+					count: 12,
 					badge: "new",
 				},
 				{
 					title: "Button",
 					url: "/particles/button",
+					count: 32,
 				},
 				{
 					title: "Input",
 					url: "/particles/input",
+					count: 12,
 				},
 				{
 					title: "Input Group",
 					url: "/particles/input-group",
+					count: 30,
 				},
 				{
 					title: "Input OTP",
 					url: "/particles/input-otp",
+					count: 6,
 				},
 				{
 					title: "Menu",
 					url: "/particles/menu",
+					count: 7,
 				},
 			],
 		},
@@ -91,15 +102,33 @@
 					<Sidebar.Menu>
 						{#each group.items as item (item.title)}
 							<Sidebar.MenuItem>
-								<Sidebar.MenuButton isActive={isActive(item.url)} class='flex justify-between items-center'>
+								<Sidebar.MenuButton
+									isActive={isActive(item.url)}
+									class="flex w-full items-center justify-between gap-2"
+								>
 									{#snippet child({ props })}
 										<a href={item.url} {...props}>
-											<span>
+											<span class="min-w-0 truncate">
 												{item.title}
 											</span>
-											{#if item.badge === "new"}
-												<Badge variant="emerald">New</Badge>
-											{/if}
+											<span class="flex items-center gap-1.5">
+												{#if item.badge === "new"}
+													<Badge
+														variant="emerald"
+														class="rounded-full px-2 text-xs">New</Badge
+													>
+												{/if}
+												<span
+													class={cn(
+														"flex size-6 items-center justify-center rounded-full font-mono text-[10px] leading-none",
+														isActive(item.url)
+															? "bg-card/50"
+															: "bg-secondary text-secondary-foreground"
+													)}
+												>
+													{item.count}
+												</span>
+											</span>
 										</a>
 									{/snippet}
 								</Sidebar.MenuButton>

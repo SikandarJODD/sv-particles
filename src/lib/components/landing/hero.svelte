@@ -39,7 +39,7 @@
 			<h1
 				class="mt-8 bg-linear-to-b from-teal-500 to-teal-400 bg-clip-text font-gp-circle text-6xl tracking-tight text-balance text-transparent md:text-7xl lg:mt-16 xl:text-[5.25rem] dark:to-white"
 			>
-				Svelte Qblocks
+				Svelte QBlocks
 			</h1>
 			<p class="mx-auto mt-8 max-w-2xl font-gp-circle text-lg text-muted-foreground">
 				Useful Shadcn-Svelte blocks built with Svelte 5, Tailwind CSS and TypeScript.

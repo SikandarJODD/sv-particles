@@ -4,7 +4,7 @@ import { particleCategoryRouteIds, type ParticleCategoryRouteId } from '$lib/nav
 
 type StructuredData = NonNullable<JsonLdProps['schema']>;
 
-export const SITE_NAME = 'Svelte Qblocks';
+export const SITE_NAME = 'Svelte QBlocks';
 export const SITE_URL = 'https://sv-particles.vercel.app';
 export const SITE_GITHUB_URL = 'https://github.com/SikandarJODD/sv-particles';
 export const SITE_TWITTER_HANDLE = '@Sikandar_Bhide';
