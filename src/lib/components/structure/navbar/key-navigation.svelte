@@ -19,7 +19,7 @@
 
 	function getKeyClass(isPressed: boolean) {
 		return cn(
-			"rounded-full",
+			"rounded-full md:rounded-xl",
 			isPressed && "scale-95 bg-secondary/70 text-background shadow-md"
 		);
 	}
@@ -27,11 +27,11 @@
 
 {#if canNavigate}
 	<div
-		class="fixed right-6 bottom-8 z-990 flex items-center gap-2 rounded-full p-0.5 backdrop-blur-sm"
+		class="fixed right-6 bottom-8 z-990 flex items-center gap-2 lg:gap-1 rounded-full p-0.5 backdrop-blur-sm md:right-3 md:bottom-4"
 	>
 		<Button
 			variant="outline"
-			size="icon-lg"
+			size="icon-sm"
 			class={getKeyClass(isLeftPressed)}
 			href={getParticleCategoryDirectionTarget(page.url.pathname, "prev")?.href}
 		>
@@ -41,7 +41,7 @@
 		</Button>
 		<Button
 			variant="outline"
-			size="icon-lg"
+			size="icon-sm"
 			class={getKeyClass(isRightPressed)}
 			href={getParticleCategoryDirectionTarget(page.url.pathname, "next")?.href}
 		>

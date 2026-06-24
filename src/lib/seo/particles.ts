@@ -4,7 +4,7 @@ import { particleCategoryRouteIds, type ParticleCategoryRouteId } from '$lib/nav
 
 type StructuredData = NonNullable<JsonLdProps['schema']>;
 
-export const SITE_NAME = 'Svelte Qblocks';
+export const SITE_NAME = 'Svelte QBlocks';
 export const SITE_URL = 'https://sv-particles.vercel.app';
 export const SITE_GITHUB_URL = 'https://github.com/SikandarJODD/sv-particles';
 export const SITE_TWITTER_HANDLE = '@Sikandar_Bhide';
@@ -116,6 +116,18 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 			'Use these avatar blocks to present people, teams, and presence states with polished fallbacks, badges, and compact identity-focused layouts.',
 		keywords: ['svelte avatar blocks', 'profile image', 'user badge', 'avatar group'],
 		breadcrumb: 'Avatars'
+	},
+	banner: {
+		id: 'banner',
+		path: '/particles/banner',
+		title: 'Banner Blocks',
+		description:
+			'Reusable shadcn-svelte banner blocks and Svelte components for announcements, offers, release updates, and dismissible promo strips.',
+		heading: 'Banner Blocks',
+		intro:
+			'Use these banner blocks for top-of-page announcements, lightweight promotions, release notices, and other wide messaging surfaces that need clear hierarchy and compact actions.',
+		keywords: ['svelte banner blocks', 'announcement bar', 'promo banner', 'notification strip'],
+		breadcrumb: 'Banner'
 	},
 	input: {
 		id: 'input',

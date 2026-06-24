@@ -2,7 +2,6 @@
 	import { goto } from "$app/navigation";
 	import { page } from "$app/state";
 	import favicon from "$lib/assets/favicon.svg";
-	import Footer from "$lib/components/landing/footer.svelte";
 	import MobileNav from "$lib/components/structure/mobile-nav.svelte";
 	import Navbar from "$lib/components/structure/navbar/navbar.svelte";
 	import ScrollUpButton from "$lib/components/structure/scroll-up-button.svelte";
@@ -56,10 +55,7 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<div class="mx-auto max-w-7xl">
-	{@render children()}
-</div>
+{@render children()}
 {#if isParticles}
 	<ScrollUpButton />
 {/if}
-<Footer />

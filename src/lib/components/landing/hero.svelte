@@ -3,7 +3,9 @@
 	import { Button } from "$lib/components/ui/button";
 </script>
 
-<div class="relative flex h-full min-h-[calc(100svh-7.5rem)] md:min-h-[calc(100vh-7rem)] items-center justify-center">
+<div
+	class="relative flex h-full min-h-[calc(100svh-7.5rem)] items-center justify-center md:min-h-[calc(100vh-15rem)]"
+>
 	<div
 		class="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
 	></div>
@@ -11,10 +13,12 @@
 		<div class="text-center sm:mx-auto lg:mt-0 lg:mr-auto">
 			<div>
 				<a
-					href="/particles/input-group"
-					class="group mx-auto flex w-fit items-center gap-2 rounded-full border border-teal-500/40 bg-teal-200/40 p-1 pl-4 md:shadow-md shadow-teal-100 transition-colors duration-300 dark:bg-teal-800/20 dark:shadow-xl dark:shadow-teal-950/30"
+					href="/particles/banner"
+					class="group mx-auto flex w-fit items-center gap-2 rounded-full border border-teal-500/40 bg-teal-200/40 p-0.5 pl-3 shadow-teal-100/40 transition-colors duration-300 md:shadow-md dark:bg-teal-800/20 dark:shadow-xl dark:shadow-teal-950/30"
 				>
-					<span class="text-xs md:text-sm text-teal-500">New Input Group Blocks</span>
+					<span class="font-mono text-sm! text-teal-500 md:text-xs!"
+						>New Banner Block</span
+					>
 					<div
 						class="size-6 overflow-hidden rounded-full bg-teal-300 duration-500 group-hover:bg-teal-300 dark:bg-teal-900/70 dark:group-hover:bg-teal-900"
 					>
@@ -33,20 +37,19 @@
 			</div>
 
 			<h1
-				class="mt-8 bg-linear-to-b font-gp-circle from-teal-500 to-teal-400 bg-clip-text text-6xl tracking-tight text-balance text-transparent md:text-7xl lg:mt-16 xl:text-[5.25rem] dark:to-white"
+				class="mt-8 bg-linear-to-b from-teal-500 to-teal-400 bg-clip-text font-gp-circle text-6xl tracking-tight text-balance text-transparent md:text-7xl lg:mt-16 xl:text-[5.25rem] dark:to-white"
 			>
-				Svelte Qblocks
+				Svelte QBlocks
 			</h1>
 			<p class="mx-auto mt-8 max-w-2xl font-gp-circle text-lg text-muted-foreground">
-				Useful Shadcn-Svelte blocks built with Svelte 5, Tailwind CSS and
-				TypeScript.
+				Useful Shadcn-Svelte blocks built with Svelte 5, Tailwind CSS and TypeScript.
 			</p>
 
 			<div class="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
 				<Button
 					href="/particles/button"
 					size="lg"
-					class="rounded-full border-none px-5 text-base"
+					class="rounded-full border-none bg-teal-400 px-5 text-base text-teal-800 hover:bg-teal-400/80 dark:bg-teal-500 dark:text-teal-950"
 				>
 					View Components
 				</Button>

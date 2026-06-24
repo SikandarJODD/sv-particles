@@ -18,7 +18,7 @@ const rawModules = import.meta.glob('./*.svelte', {
 }) as Record<string, string>;
 
 const accordionEntries: AccordionEntry[] = [
-	{ file: 'basic.svelte', name: 'Basic Accordion' },
+	{ file: 'basic.svelte', name: 'Basic' },
 	{ file: 'multiple-panels.svelte', name: 'Multiple Panels' },
 	{ file: 'with-one-panel.svelte', name: 'With One Panel' },
 	{ file: 'controlled.svelte', name: 'Controlled' }

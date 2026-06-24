@@ -4,18 +4,21 @@
 	import * as Drawer from "$lib/components/ui/drawer/index.js";
 	import PreviewContent from "./PreviewContent.svelte";
 	type Props = {
+		id: string;
 		installation_url: string;
 		code: CodeType | CodeType[];
 		folder_structure?: string | undefined;
 	};
-	let { installation_url, code, folder_structure = "" }: Props = $props();
+	let { installation_url, code, id = $bindable(''), folder_structure = "" }: Props = $props();
+	$inspect(id, "id code");
 </script>
 
-<Drawer.Root shouldScaleBackground={false} direction="right" handleOnly>
+<Drawer.Root shouldScaleBackground={true} direction="right" handleOnly>
 	<Drawer.Trigger>
 		<Button
 			size="sm"
 			variant="outline"
+			data-s-event={id}
 			class="rounded-lg bg-transparent text-xs hover:bg-muted!"
 		>
 			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
