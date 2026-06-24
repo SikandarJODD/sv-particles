@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Footer from "$lib/components/landing/footer.svelte";
 	import Hero from "$lib/components/landing/hero.svelte";
 </script>
 
@@ -10,3 +11,4 @@
 	/>
 </svelte:head>
 <Hero />
+<Footer />

@@ -1,4 +1,7 @@
 <script lang="ts">
+	import AppSidebar from "$lib/components/app-sidebar.svelte";
+	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
+
 	import type { OnNavigate } from "@sveltejs/kit";
 	import { onNavigate } from "$app/navigation";
 	import { page } from "$app/state";
@@ -106,16 +109,23 @@
 
 <SEO {meta} schema={pageData.pageSchema} />
 
-<div class="particles-transition-shell px-6 py-4 md:p-10">
-	{@render children()}
-</div>
-<div class="particles-key-navigation-shell">
+<!-- <div class="particles-transition-shell px-6 py-4 md:p-10"> -->
+<Sidebar.Provider>
+	<AppSidebar />
+	<!-- <Sidebar.Trigger  /> -->
+	<Sidebar.Inset class="particles-transition-shell px-6 py-4 md:px-15 md:py-6">
+		<div class="max-w-7xl">
+			{@render children()}
+		</div>
+	</Sidebar.Inset>
+</Sidebar.Provider>
+<!-- </div> -->
+<!-- <div class="particles-key-navigation-shell">
 	<KeyNavigation />
-</div>
+</div> -->
 
 <style>
 	.particles-transition-shell {
-		background: var(--background);
 		isolation: isolate;
 		overflow-x: clip;
 		view-transition-name: particles-content;
@@ -137,8 +147,12 @@
 		will-change: transform;
 	}
 
-	:global(:root[data-nav-transition^="particles-"]::view-transition-old(particles-key-navigation)),
-	:global(:root[data-nav-transition^="particles-"]::view-transition-new(particles-key-navigation)) {
+	:global(
+		:root[data-nav-transition^="particles-"]::view-transition-old(particles-key-navigation)
+	),
+	:global(
+		:root[data-nav-transition^="particles-"]::view-transition-new(particles-key-navigation)
+	) {
 		animation: none;
 	}
 

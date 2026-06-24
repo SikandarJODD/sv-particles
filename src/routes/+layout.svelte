@@ -56,10 +56,7 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<div class="mx-auto max-w-7xl">
-	{@render children()}
-</div>
+{@render children()}
 {#if isParticles}
 	<ScrollUpButton />
 {/if}
-<Footer />

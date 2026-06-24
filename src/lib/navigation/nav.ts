@@ -19,9 +19,9 @@ export type ParticleCategoryNavItem = {
 
 export type NavItem =
 	| {
-			href: '/';
-			label: 'Home';
-	  }
+		href: '/';
+		label: 'Home';
+	}
 	| ParticleCategoryNavItem;
 
 export const particleCategoryNavItems: ParticleCategoryNavItem[] = [
@@ -58,3 +58,18 @@ export function getParticleCategoryDirectionTarget(
 
 	return particleCategoryNavItems[targetIndex];
 }
+
+type DesktopNavItem = {
+	name: string;
+	href: string;
+}
+export const desktopNav: DesktopNavItem[] = [
+	{
+		name: 'Home',
+		href: '/'
+	},
+	{
+		name: 'Components',
+		href: '/particles/accordion'
+	},
+]
