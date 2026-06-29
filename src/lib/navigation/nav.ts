@@ -35,7 +35,7 @@ export const particleCategoryNavItems: ParticleCategoryNavItem[] = [
 	{ id: 'input-group', href: '/particles/input-group', label: 'Input Group' },
 	{ id: 'input-otp', href: '/particles/input-otp', label: 'Input OTP' },
 	{ id: 'menu', href: '/particles/menu', label: 'Menu' },
-	{ id: 'tabs', href: '/particles/tabs', label: 'Tabs' }
+	// { id: 'tabs', href: '/particles/tabs', label: 'Tabs' }
 ];
 
 export const particleCategoryRouteIds = particleCategoryNavItems.map((item) => item.id);
