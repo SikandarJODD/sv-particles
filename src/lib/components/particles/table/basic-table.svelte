@@ -54,7 +54,7 @@
 				<Table.Head>Email</Table.Head>
 				<Table.Head>Location</Table.Head>
 				<Table.Head>Status</Table.Head>
-				<Table.Head>Balance</Table.Head>
+				<Table.Head class="text-end">Balance</Table.Head>
 			</Table.Row>
 		</Table.Header>
 		<Table.Body>
@@ -68,5 +68,11 @@
 				</Table.Row>
 			{/each}
 		</Table.Body>
+		<Table.Footer class="bg-transparent">
+			<Table.Row class="hover:bg-transparent">
+				<Table.Cell colspan={4}>Total</Table.Cell>
+				<Table.Cell class="text-right">$2,500.00</Table.Cell>
+			</Table.Row>
+		</Table.Footer>
 	</Table.Root>
 </div>

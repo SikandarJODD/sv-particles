@@ -44,6 +44,10 @@ const tableEntries: OtpEntry[] = [
     { file: 'with-images.svelte', name: 'Table with Images' },
     { file: 'without-horizontal-divider.svelte', name: 'Table without Horizontal Divider' },
     { file: 'striped-table.svelte', name: 'Striped Table' },
+    { file: 'with-vertical-lines.svelte', name: 'Table with Vertical Lines' },
+    { file: 'dense-table.svelte', name: 'Dense Table' },
+    { file: 'table-with-row-selection.svelte', name: 'Table with Row Selection' },
+    { file: 'card-table.svelte', name: 'Card Table' },
 ];
 
 const getData = ({ file, name }: OtpEntry): Data => {

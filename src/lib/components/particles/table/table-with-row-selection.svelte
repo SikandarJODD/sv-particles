@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as Table from "$lib/components/ui/table/index.js";
-
+	import { Checkbox } from "$lib/components/ui/checkbox";
 	const items = [
 		{
 			balance: "$1,250.00",
@@ -47,9 +47,12 @@
 
 <div class="mx-auto w-4xl py-10">
 	<Table.Root class="w-full">
-		<Table.Caption>Basic Table</Table.Caption>
+		<Table.Caption>Table with row selection</Table.Caption>
 		<Table.Header>
 			<Table.Row>
+				<Table.Head>
+					<Checkbox />
+				</Table.Head>
 				<Table.Head>Name</Table.Head>
 				<Table.Head>Email</Table.Head>
 				<Table.Head>Location</Table.Head>
@@ -60,6 +63,9 @@
 		<Table.Body>
 			{#each items as item}
 				<Table.Row>
+					<Table.Cell>
+						<Checkbox />
+					</Table.Cell>
 					<Table.Cell class="font-medium">{item.name}</Table.Cell>
 					<Table.Cell>{item.email}</Table.Cell>
 					<Table.Cell>{item.location}</Table.Cell>

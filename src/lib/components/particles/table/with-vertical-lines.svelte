@@ -45,28 +45,36 @@
 	];
 </script>
 
-<div class="mx-auto w-4xl py-10">
+<div class="mx-auto w-5xl py-10">
 	<Table.Root class="w-full">
-		<Table.Caption>Basic Table</Table.Caption>
+		<Table.Caption>Table with vertical lines</Table.Caption>
 		<Table.Header>
-			<Table.Row>
+			<Table.Row class="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r">
 				<Table.Head>Name</Table.Head>
 				<Table.Head>Email</Table.Head>
 				<Table.Head>Location</Table.Head>
 				<Table.Head>Status</Table.Head>
-				<Table.Head>Balance</Table.Head>
+				<Table.Head class="text-end">Balance</Table.Head>
 			</Table.Row>
 		</Table.Header>
 		<Table.Body>
 			{#each items as item}
-				<Table.Row>
-					<Table.Cell class="font-medium">{item.name}</Table.Cell>
-					<Table.Cell>{item.email}</Table.Cell>
-					<Table.Cell>{item.location}</Table.Cell>
-					<Table.Cell>{item.status}</Table.Cell>
-					<Table.Cell class="text-end">{item.balance}</Table.Cell>
+				<Table.Row
+					class="*:border-border hover:bg-transparent [&>:not(:last-child)]:border-r"
+				>
+					<Table.Cell class="py-2.5 font-medium">{item.name}</Table.Cell>
+					<Table.Cell class="py-2.5">{item.email}</Table.Cell>
+					<Table.Cell class="py-2.5">{item.location}</Table.Cell>
+					<Table.Cell class="py-2.5">{item.status}</Table.Cell>
+					<Table.Cell class="py-2.5 text-end">{item.balance}</Table.Cell>
 				</Table.Row>
 			{/each}
 		</Table.Body>
+		<!-- <Table.Footer class="bg-transparent">
+			<Table.Row class="hover:bg-transparent">
+				<Table.Cell colspan={4}>Total</Table.Cell>
+				<Table.Cell class="text-right">$2,500.00</Table.Cell>
+			</Table.Row>
+		</Table.Footer> -->
 	</Table.Root>
 </div>

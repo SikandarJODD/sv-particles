@@ -1,72 +1,95 @@
 <script lang="ts">
 	import * as Table from "$lib/components/ui/table/index.js";
 
-	const items = [
+	const programmingLanguages = [
 		{
-			balance: "$1,250.00",
-			email: "alex.t@company.com",
+			developer: "Brendan Eich",
+			extension: ".js",
 			id: "1",
-			location: "San Francisco, US",
-			name: "Alex Thompson",
-			status: "Active",
+			latestVersion: "ES2021",
+			name: "JavaScript",
+			paradigm: "Multi-paradigm",
+			popularity: "High",
+			releaseYear: "1995",
+			typing: "Dynamic",
 		},
 		{
-			balance: "$600.00",
-			email: "sarah.c@company.com",
+			developer: "Guido van Rossum",
+			extension: ".py",
 			id: "2",
-			location: "Singapore",
-			name: "Sarah Chen",
-			status: "Active",
+			latestVersion: "3.10",
+			name: "Python",
+			paradigm: "Multi-paradigm",
+			popularity: "High",
+			releaseYear: "1991",
+			typing: "Dynamic",
 		},
 		{
-			balance: "$650.00",
-			email: "j.wilson@company.com",
+			developer: "James Gosling",
+			extension: ".java",
 			id: "3",
-			location: "London, UK",
-			name: "James Wilson",
-			status: "Inactive",
+			latestVersion: "17",
+			name: "Java",
+			paradigm: "Object-oriented",
+			popularity: "High",
+			releaseYear: "1995",
+			typing: "Static",
 		},
 		{
-			balance: "$0.00",
-			email: "m.garcia@company.com",
+			developer: "Bjarne Stroustrup",
+			extension: ".cpp",
 			id: "4",
-			location: "Madrid, Spain",
-			name: "Maria Garcia",
-			status: "Active",
+			latestVersion: "C++20",
+			name: "C++",
+			paradigm: "Multi-paradigm",
+			popularity: "High",
+			releaseYear: "1985",
+			typing: "Static",
 		},
 		{
-			balance: "-$1,000.00",
-			email: "d.kim@company.com",
+			developer: "Yukihiro Matsumoto",
+			extension: ".rb",
 			id: "5",
-			location: "Seoul, KR",
-			name: "David Kim",
-			status: "Active",
+			latestVersion: "3.0",
+			name: "Ruby",
+			paradigm: "Multi-paradigm",
+			popularity: "Low",
+			releaseYear: "1995",
+			typing: "Dynamic",
 		},
 	];
 </script>
 
 <div class="mx-auto w-4xl py-10">
-	<Table.Root class="w-full">
-		<Table.Caption>Basic Table</Table.Caption>
-		<Table.Header>
-			<Table.Row>
-				<Table.Head>Name</Table.Head>
-				<Table.Head>Email</Table.Head>
-				<Table.Head>Location</Table.Head>
-				<Table.Head>Status</Table.Head>
-				<Table.Head>Balance</Table.Head>
-			</Table.Row>
-		</Table.Header>
-		<Table.Body>
-			{#each items as item}
-				<Table.Row>
-					<Table.Cell class="font-medium">{item.name}</Table.Cell>
-					<Table.Cell>{item.email}</Table.Cell>
-					<Table.Cell>{item.location}</Table.Cell>
-					<Table.Cell>{item.status}</Table.Cell>
-					<Table.Cell class="text-end">{item.balance}</Table.Cell>
+	<div class="overflow-hidden rounded-md border bg-background">
+		<Table.Root class="w-full">
+			<Table.Header>
+				<Table.Row class="bg-muted/50">
+					<Table.Head class="h-9 py-2">Name</Table.Head>
+					<Table.Head class="h-9 py-2">Release Year</Table.Head>
+					<Table.Head class="h-9 py-2">Developer</Table.Head>
+					<Table.Head class="h-9 py-2">Typing</Table.Head>
+					<Table.Head class="h-9 py-2">Paradigm</Table.Head>
+					<Table.Head class="h-9 py-2">Extension</Table.Head>
+					<Table.Head class="h-9 py-2">Latest Version</Table.Head>
+					<Table.Head class="h-9 py-2">Popularity</Table.Head>
 				</Table.Row>
-			{/each}
-		</Table.Body>
-	</Table.Root>
+			</Table.Header>
+			<Table.Body>
+				{#each programmingLanguages as item}
+					<Table.Row>
+						<Table.Cell class="font-medium">{item.name}</Table.Cell>
+						<Table.Cell>{item.releaseYear}</Table.Cell>
+						<Table.Cell>{item.developer}</Table.Cell>
+						<Table.Cell>{item.typing}</Table.Cell>
+						<Table.Cell>{item.paradigm}</Table.Cell>
+						<Table.Cell>{item.extension}</Table.Cell>
+						<Table.Cell>{item.latestVersion}</Table.Cell>
+						<Table.Cell>{item.popularity}</Table.Cell>
+					</Table.Row>
+				{/each}
+			</Table.Body>
+		</Table.Root>
+	</div>
+	<p class="mt-4 text-center text-muted-foreground text-sm">Dense table</p>
 </div>

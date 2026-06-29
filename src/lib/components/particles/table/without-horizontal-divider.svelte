@@ -47,26 +47,34 @@
 
 <div class="mx-auto w-4xl py-10">
 	<Table.Root class="w-full">
-		<Table.Caption>Basic Table</Table.Caption>
+		<Table.Caption>Table without Horizontal Dividers</Table.Caption>
 		<Table.Header>
 			<Table.Row>
 				<Table.Head>Name</Table.Head>
 				<Table.Head>Email</Table.Head>
 				<Table.Head>Location</Table.Head>
 				<Table.Head>Status</Table.Head>
-				<Table.Head>Balance</Table.Head>
+				<Table.Head class="text-end">Balance</Table.Head>
 			</Table.Row>
 		</Table.Header>
-		<Table.Body>
+		<tbody aria-hidden="true" class="table-row h-2"></tbody>
+		<Table.Body class="[&_td:first-child]:rounded-l-lg [&_td:last-child]:rounded-r-lg">
 			{#each items as item}
-				<Table.Row>
-					<Table.Cell class="font-medium">{item.name}</Table.Cell>
-					<Table.Cell>{item.email}</Table.Cell>
-					<Table.Cell>{item.location}</Table.Cell>
-					<Table.Cell>{item.status}</Table.Cell>
-					<Table.Cell class="text-end">{item.balance}</Table.Cell>
+				<Table.Row class="border-0">
+					<Table.Cell class="py-2.5 font-medium">{item.name}</Table.Cell>
+					<Table.Cell class="py-2.5">{item.email}</Table.Cell>
+					<Table.Cell class="py-2.5">{item.location}</Table.Cell>
+					<Table.Cell class="py-2.5">{item.status}</Table.Cell>
+					<Table.Cell class="py-2.5 text-end">{item.balance}</Table.Cell>
 				</Table.Row>
 			{/each}
 		</Table.Body>
+		<tbody aria-hidden="true" class="table-row h-2"></tbody>
+		<Table.Footer class="bg-transparent">
+			<Table.Row class="hover:bg-transparent">
+				<Table.Cell colspan={4}>Total</Table.Cell>
+				<Table.Cell class="text-right">$2,500.00</Table.Cell>
+			</Table.Row>
+		</Table.Footer>
 	</Table.Root>
 </div>

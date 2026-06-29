@@ -87,7 +87,7 @@
 					title: "Table",
 					url: "/particles/table",
 					count: 10,
-					badge: "beta",
+					badge: "new",
 				},
 				// {
 				// 	title: "Tabs",
