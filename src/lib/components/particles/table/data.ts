@@ -48,6 +48,9 @@ const tableEntries: OtpEntry[] = [
     { file: 'dense-table.svelte', name: 'Dense Table' },
     { file: 'table-with-row-selection.svelte', name: 'Table with Row Selection' },
     { file: 'card-table.svelte', name: 'Card Table' },
+    // { file: 'vertical-table.svelte', name: 'Vertical Table' },
+    { file: 'table-with-sticky-header.svelte', name: 'Table with Sticky Header' },
+    { file: 'unique-table.svelte', name: 'Unique Table' },
 ];
 
 const getData = ({ file, name }: OtpEntry): Data => {
