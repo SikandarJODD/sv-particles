@@ -10,7 +10,8 @@ export type ParticleCategoryRouteId =
 	| 'input-group'
 	| 'input-otp'
 	| 'menu'
-	| 'tabs';
+	| 'tabs'
+	| 'table';
 
 export type ParticleCategoryNavItem = {
 	id: ParticleCategoryRouteId;
@@ -35,7 +36,8 @@ export const particleCategoryNavItems: ParticleCategoryNavItem[] = [
 	{ id: 'input-group', href: '/particles/input-group', label: 'Input Group' },
 	{ id: 'input-otp', href: '/particles/input-otp', label: 'Input OTP' },
 	{ id: 'menu', href: '/particles/menu', label: 'Menu' },
-	// { id: 'tabs', href: '/particles/tabs', label: 'Tabs' }
+	// { id: 'tabs', href: '/particles/tabs', label: 'Tabs' },
+	{ id: 'table', href: '/particles/table', label: 'Table' }
 ];
 
 export const particleCategoryRouteIds = particleCategoryNavItems.map((item) => item.id);
