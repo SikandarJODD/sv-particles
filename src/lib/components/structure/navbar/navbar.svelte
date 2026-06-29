@@ -9,7 +9,7 @@
 >
 	<nav class="z-50 mx-auto flex h-full w-full max-w-5xl items-center justify-between">
 		<div>
-			<a href="/" class='font-mono text-sm text-transparent bg-clip-text bg-linear-to-tr font-medium from-white to-teal-500'>Svelte QBlocks</a>
+			<a href="/" class='font-mono text-sm text-transparent bg-clip-text bg-linear-to-tr font-medium from-teal-600 dark:from-white to-teal-500'>Svelte QBlocks</a>
 		</div>
 		<div class="flex items-center gap-1.5">
 			{#each desktopNav as item}
