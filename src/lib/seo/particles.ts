@@ -188,6 +188,18 @@ export const particlesSeoRoutes: Record<ParticlesRouteId, ParticlesRouteDefiniti
 			'These tabs blocks are designed for organizing content into manageable sections, allowing users to switch between different views or categories without leaving the page.',
 		keywords: ['svelte tabs blocks', 'tabbed navigation', 'content grouping', 'stateful sections'],
 		breadcrumb: 'Tabs'
+	},
+	table:{
+		id: 'table',
+		path: '/particles/table',
+		title: 'Table Blocks',
+		description:
+			'Reusable shadcn-svelte table blocks and Svelte components for displaying data in rows and columns with sorting, filtering, and pagination.',
+		heading: 'Table Blocks',
+		intro:
+			'These table blocks are ideal for presenting structured data, allowing users to easily read, sort, and interact with tabular information.',
+		keywords: ['svelte table blocks', 'data table', 'sortable table', 'filterable table'],
+		breadcrumb: 'Table'
 	}
 };
 

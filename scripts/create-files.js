@@ -81,9 +81,9 @@ let content = `<script lang="ts">
 	];
 </script>
 
-<div>
-	<Table.Root>
-		<Table.Caption>A list of your recent invoices.</Table.Caption>
+<div class="mx-auto w-4xl py-10">
+	<Table.Root class="w-full">
+		<Table.Caption>Basic Table</Table.Caption>
 		<Table.Header>
 			<Table.Row>
 				<Table.Head>Name</Table.Head>
@@ -105,9 +105,7 @@ let content = `<script lang="ts">
 			{/each}
 		</Table.Body>
 	</Table.Root>
-	<p class="mt-4 text-center text-sm text-muted-foreground">Basic table</p>
 </div>
-
 `;
 
 for (const file of files) {

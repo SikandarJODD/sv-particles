@@ -84,11 +84,17 @@
 					count: 7,
 				},
 				{
-					title: "Tabs",
-					url: "/particles/tabs",
-					count: 20,
+					title: "Table",
+					url: "/particles/table",
+					count: 10,
 					badge: "beta",
 				},
+				// {
+				// 	title: "Tabs",
+				// 	url: "/particles/tabs",
+				// 	count: 20,
+				// 	badge: "beta",
+				// },
 			],
 		},
 	];
@@ -121,18 +127,18 @@
 												{#if item.badge === "new"}
 													<Badge
 														variant="emerald"
-														class="rounded-full px-2 text-xs">New</Badge
+														class="rounded-full px-2 text-[10px]">New</Badge
 													>
 												{:else if item.badge === "updated"}
 													<Badge
 														variant="blue"
-														class="rounded-full px-2 text-xs"
+														class="rounded-full px-2 text-[10px]"
 														>Updated</Badge
 													>
 												{:else if item.badge === "beta"}
 													<Badge
 														variant="yellow"
-														class="rounded-full px-2 text-xs"
+														class="rounded-full px-2 text-[10px]"
 														>Beta</Badge
 													>
 												{/if}
