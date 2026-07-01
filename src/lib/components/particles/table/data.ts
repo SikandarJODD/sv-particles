@@ -20,16 +20,6 @@ const rawModules = import.meta.glob('./*.svelte', {
 
 /*
 "basic-table.svelte",
-    "with-images.svelte",
-    "without-horizontal-divider.svelte",
-    "striped-table.svelte",
-    "with-vertical-lines.svelte",
-    "dense-table.svelte",
-    "table-with-row-selection.svelte",
-    "card-table.svelte",
-    "vertical-table.svelte",
-    "table-with-sticky-header.svelte",
-    "unique-table.svelte",
     "basic-data-table-with-vincjo.svelte",
     "data-table-with-filters.svelte",
     "resizable-sortable-table.svelte",
