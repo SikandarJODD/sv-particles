@@ -1,4 +1,4 @@
-<script lang="ts" generics="RowData extends Record<string, unknown>">
+<script lang="ts" generics="Row extends Record<string, unknown>">
 	import ChevronDownIcon from "@lucide/svelte/icons/chevron-down";
 	import ChevronUpIcon from "@lucide/svelte/icons/chevron-up";
 	import { cn, type WithoutChildren } from "$lib/utils.js";
@@ -11,8 +11,8 @@
 	>[0];
 
 	type Props = WithoutChildren<HTMLThAttributes> & {
-		table: TableHandlerInterface<RowData>;
-		field: Field<RowData>;
+		table: TableHandlerInterface<Row>;
+		field: Field<Row>;
 		direction?: "asc" | "desc";
 		children: Snippet;
 		btnClass?: string;

@@ -1,4 +1,4 @@
-<script lang="ts" generics="RowData extends Record<string, unknown>">
+<script lang="ts" generics="Row extends Record<string, unknown>">
 	import SearchIcon from "@lucide/svelte/icons/search";
 	import * as InputGroup from "$lib/components/ui/input-group";
 	import { Spinner } from "$lib/components/ui/spinner";
@@ -6,7 +6,7 @@
 	import type { TableHandlerInterface } from "@vincjo/datatables/server";
 
 	type Props = {
-		table: TableHandlerInterface<RowData>;
+		table: TableHandlerInterface<Row>;
 		placeholder?: string;
 		class?: string;
 	};

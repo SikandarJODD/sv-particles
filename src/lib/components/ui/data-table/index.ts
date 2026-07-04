@@ -1,4 +1,4 @@
-import ThSearch from './th-search.svelte';
+import TableSearch from './table-search.svelte';
 import ThSort from './th-sort.svelte';
 
-export { ThSearch, ThSort };
+export { TableSearch, ThSort };

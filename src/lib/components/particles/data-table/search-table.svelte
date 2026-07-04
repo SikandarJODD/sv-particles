@@ -7,7 +7,7 @@
 		type TableHandlerInterface,
 	} from "@vincjo/datatables/server";
 	import { getProducts, type Product } from "$lib/api/products";
-	import { ThSearch, ThSort } from "$lib/components/ui/data-table";
+	import { TableSearch, ThSort } from "$lib/components/ui/data-table";
 
 	const handler = new TableHandler<Product>([], { rowsPerPage: 10 });
 	const table = handler as TableHandlerInterface<Product>;
@@ -19,7 +19,7 @@
 <div class="mx-auto max-w-5xl py-10">
 	<Datatable {table} headless>
 		{#snippet header()}
-			<ThSearch {table} placeholder="Search products..." class="w-60" />
+			<TableSearch {table} placeholder="Search products..." class="w-60" />
 		{/snippet}
 		<div class="mt-2 overflow-hidden rounded-md border bg-background">
 			<Table.Root class="table-fixed">
