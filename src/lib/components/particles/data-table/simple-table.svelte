@@ -17,7 +17,7 @@
 </script>
 
 <div class="mx-auto max-w-5xl py-10">
-	<Datatable {table} basic headless>
+	<Datatable {table} headless>
 		<div class="overflow-hidden rounded-md border bg-background">
 			<Table.Root>
 				<Table.Header>
@@ -34,7 +34,7 @@
 				<Table.Body>
 					{#each handler.rows as product (product.id)}
 						<Table.Row
-							class="not-last:*:border-b *:border-border hover:bg-transparent [&>:not(:last-child)]:border-r"
+							class="*:border-border not-last:*:border-b hover:bg-transparent [&>:not(:last-child)]:border-r"
 						>
 							<Table.Cell class="font-medium">{product.title}</Table.Cell>
 							<Table.Cell class="text-center">{product.category}</Table.Cell>
