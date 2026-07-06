@@ -23,6 +23,7 @@
 		"@sveltejs/kit": "latest",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@tailwindcss/vite": "latest",
+		"@vincjo/datatables": "^2.8.1",
 		"bits-ui": "^2.17.3",
 		"clsx": "^2.1.1",
 		"package-manager-detector": "^1.6.0",

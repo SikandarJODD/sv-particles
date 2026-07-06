@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { cn, type WithElementRef } from "$lib/utils.js";
 	import type { HTMLThAttributes } from "svelte/elements";
+	import { fade } from "svelte/transition";
 
 	let {
 		ref = $bindable(null),

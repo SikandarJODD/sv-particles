@@ -13,6 +13,7 @@
 	let { children } = $props();
 
 	const isParticles = $derived(page.url.pathname.startsWith("/particles/"));
+	const isDemo = $derived(page.url.pathname.startsWith("/demo"));
 
 	function isTypingElement() {
 		return (
@@ -50,12 +51,14 @@
 </script>
 
 <ModeWatcher defaultMode="system" />
-<MobileNav />
-<Navbar />
+{#if !isDemo}
+	<MobileNav />
+	<Navbar />
+{/if}
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
 {@render children()}
-{#if isParticles}
+{#if isParticles && !isDemo}
 	<ScrollUpButton />
 {/if}

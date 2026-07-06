@@ -5,6 +5,7 @@ import CSS from './css.svelte';
 import MCP from './mcp.svelte';
 import TypeScript from './typescript.svelte';
 import Apple from './apple.svelte';
+import Markdown from './markdown.svelte';
 
 export interface Props extends HTMLAttributes<SVGElement> {
 	class?: string;
@@ -12,4 +13,4 @@ export interface Props extends HTMLAttributes<SVGElement> {
 	height?: number;
 }
 
-export { GitHub, Svelte, CSS, TypeScript, MCP, Apple };
+export { GitHub, Svelte, CSS, TypeScript, MCP, Apple, Markdown };
