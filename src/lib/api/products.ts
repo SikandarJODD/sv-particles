@@ -18,14 +18,25 @@ type ProductsResponse = {
 	total: number;
 };
 
+export async function getProductCategories(): Promise<string[]> {
+	const response = await fetch(`${PRODUCTS_API_URL}/category-list`);
+
+	if (!response.ok) {
+		throw new Error(`Failed to fetch product categories: ${response.status}`);
+	}
+
+	return response.json();
+}
+
 export async function getProducts(state: State<Product>): Promise<Product[]> {
+	const category = state.filters?.find((filter) => filter.field === "category")?.value;
 	const params = new URLSearchParams({
 		limit: String(state.rowsPerPage),
 		skip: String(state.offset),
 	});
 
 	for (const filter of state.filters ?? []) {
-		if (filter.value == null || filter.value === "") {
+		if (filter.field === "category" || filter.value == null || filter.value === "") {
 			continue;
 		}
 
@@ -34,7 +45,7 @@ export async function getProducts(state: State<Product>): Promise<Product[]> {
 
 	const search = state.search?.trim();
 
-	if (search) {
+	if (search && !category) {
 		params.set("q", search);
 	}
 
@@ -46,7 +57,11 @@ export async function getProducts(state: State<Product>): Promise<Product[]> {
 		params.set("order", state.sort.direction);
 	}
 
-	const endpoint = search ? `${PRODUCTS_API_URL}/search` : PRODUCTS_API_URL;
+	const endpoint = category
+		? `${PRODUCTS_API_URL}/category/${encodeURIComponent(String(category))}`
+		: search
+			? `${PRODUCTS_API_URL}/search`
+			: PRODUCTS_API_URL;
 	const response = await fetch(`${endpoint}?${params.toString()}`);
 
 	if (!response.ok) {
