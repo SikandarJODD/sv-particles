@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { BlockCodeNode } from "$lib/blocks/showcase";
+	import { CSS, Markdown, Svelte, TypeScript } from "$lib/icons";
 	import { cn } from "$lib/utils";
 	import ChevronRight from "@lucide/svelte/icons/chevron-right";
 	import ExternalLink from "@lucide/svelte/icons/external-link";
@@ -20,38 +21,55 @@
 	let { node, activeFileId, openFolderIds, onSelectFile, onToggleFolder }: CodeTreeNodeProps =
 		$props();
 
+	const fileIcons = {
+		".svelte": Svelte,
+		".ts": TypeScript,
+		".md": Markdown,
+		".css": CSS,
+	} as const;
+
+	function getFileIcon(fileName: string) {
+		const normalizedName = fileName.toLowerCase();
+
+		for (const [extension, Icon] of Object.entries(fileIcons)) {
+			if (normalizedName.endsWith(extension)) {
+				return Icon;
+			}
+		}
+
+		return FileCode2;
+	}
+
 	let isOpen = $derived(node.type === "folder" ? openFolderIds.has(node.id) : false);
 	let isExternalOnlyFile = $derived(
 		node.type === "file" && Boolean(node.externalUrl) && !node.code
 	);
+	let FileIcon = $derived(node.type === "file" ? getFileIcon(node.name) : FileCode2);
 </script>
 
 {#if node.type === "folder"}
-	<div>
+	<div class="my-0.5">
 		<button
 			type="button"
-			class="flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-left text-xs text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
+			class="flex w-full items-center justify-between gap-2 rounded-md px-2 py-1.5 text-left text-xs text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
 			onclick={() => onToggleFolder(node.id)}
 		>
-			<span class="flex w-4 shrink-0 items-center justify-center">
-				<!-- {#if isOpen}
-					<ChevronDown class="size-3.5" />
+			<span class="flex min-w-0 items-center gap-2 truncate">
+				{#if isOpen}
+					<FolderOpen class="size-3.5 text-foreground/80" />
 				{:else}
-					<ChevronRight class="size-3.5" />
-					{/if} -->
+					<Folder class="size-3.5 text-foreground/80" />
+				{/if}
+				<span class="truncate">{node.name}</span>
+			</span>
+			<span class="flex w-4 shrink-0 items-center justify-center">
 				<ChevronRight
 					class={[
 						"size-3.5 transition duration-150 ease-out",
-						isOpen ? "rotate-90 text-foreground/80" : "text-foreground/60"
+						isOpen ? "rotate-90 text-foreground/80" : "text-foreground/60",
 					]}
 				/>
 			</span>
-			{#if isOpen}
-				<FolderOpen class="size-3.5 text-foreground/80" />
-			{:else}
-				<Folder class="size-3.5 text-foreground/80" />
-			{/if}
-			<span class="truncate">{node.name}</span>
 		</button>
 
 		{#if isOpen}
@@ -77,7 +95,7 @@
 		class="flex items-center gap-1 rounded-md text-xs text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
 	>
 		<span class="w-4 shrink-0"></span>
-		<FileCode2 class="size-3.5 shrink-0 text-sky-500" />
+		<FileIcon class="size-3.5 shrink-0 text-sky-500" />
 		<span class="min-w-0 flex-1 truncate py-1.5">{node.name}</span>
 		<span class="mr-2 inline-flex size-7 shrink-0 items-center justify-center rounded-md">
 			<ExternalLink class="size-3.5" />
@@ -88,7 +106,7 @@
 		class={cn(
 			"flex items-center gap-1 rounded-md text-xs transition-colors",
 			activeFileId === node.id
-				? "bg-accent text-foreground shadow-sm"
+				? "bg-accent text-foreground"
 				: "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
 		)}
 	>
@@ -97,8 +115,8 @@
 			class="flex min-w-0 flex-1 items-center gap-2 px-2 py-1.5 text-left"
 			onclick={() => onSelectFile(node.id)}
 		>
-			<span class="w-4 shrink-0"></span>
-			<FileCode2 class="size-3.5 shrink-0 text-sky-500" />
+			<!-- <span class="w-4 shrink-0"></span> -->
+			<FileIcon class="size-3.5 shrink-0 text-sky-500" />
 			<span class="truncate">{node.name}</span>
 		</button>
 
