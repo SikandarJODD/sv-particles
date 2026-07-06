@@ -89,6 +89,12 @@
 					count: 10,
 					badge: "new",
 				},
+				{
+					title: "Data Table",
+					url: "/particles/data-table",
+					count: 1,
+					badge: 'beta',
+				},
 				// {
 				// 	title: "Tabs",
 				// 	url: "/particles/tabs",

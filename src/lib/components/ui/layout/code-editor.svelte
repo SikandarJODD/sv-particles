@@ -3,7 +3,7 @@
 		collectDefaultOpenFolderIds,
 		findBlockCodeFile,
 		flattenBlockCodeFiles,
-		type BlockCodeTree
+		type BlockCodeTree,
 	} from "$lib/blocks/showcase";
 	import Check from "@lucide/svelte/icons/check";
 	import Copy from "@lucide/svelte/icons/copy";
@@ -12,7 +12,8 @@
 	import { scale } from "svelte/transition";
 	import CodeTreeNode from "./code-tree-node.svelte";
 	import { Button } from "../button";
-	import Code from "$lib/components/extra/code/code.svelte";
+	import * as Code from "$lib/components/extra/code";
+	import ScrollArea from "../scroll-area/scroll-area.svelte";
 
 	let { codeTree }: { codeTree: BlockCodeTree } = $props();
 
@@ -116,7 +117,14 @@
 		</div>
 
 		{#if activeFile?.code}
-			<Code code={activeFile.code} lang={activeFile.lang} highlight={activeFile.highlight} />
+			<ScrollArea  class='h-132'>
+				<Code.Root
+					code={activeFile.code}
+					lang={activeFile.lang}
+					highlight={activeFile.highlight}
+					class="border-none"
+				></Code.Root>
+			</ScrollArea>
 		{:else if activeFile?.externalUrl}
 			<div class="flex min-h-[20rem] items-center justify-center px-6">
 				<div class="max-w-md text-center">
