@@ -1,32 +1,26 @@
-import { createBlockCodeTree, type BlockShowcaseItem } from "$lib/blocks/showcase";
 import BasicTable from "../basic-table.svelte";
 import basicTableSource from "../basic-table.svelte?raw";
 import productApiSource from "../api/product.ts?raw";
-import docsSource from "../docs.md?raw";
+import { createDataTableShowcase } from "./shared";
 
-export const basicTableShowcase: BlockShowcaseItem = {
+export const basicTableShowcase = createDataTableShowcase({
 	id: "basic-data-table",
 	title: "Basic Data Table",
-	description: "Simple product table with search, sorting, and pagination.",
+	description: "Basic product table example using a local API helper.",
 	previewComponent: BasicTable,
-	codeTree: createBlockCodeTree("basic-table.svelte", [
+	defaultFileId: "basic-table.svelte",
+	files: [
 		{
 			id: "basic-table.svelte",
-			path: "table/basic-table.svelte",
+			path: "data-table/basic-table.svelte",
 			code: basicTableSource,
 			lang: "svelte",
 		},
 		{
 			id: "api/product.ts",
-			path: "api/product.ts",
+			path: "data-table/api/product.ts",
 			code: productApiSource,
 			lang: "typescript",
 		},
-		{
-			id: "docs.md",
-			path: "docs.md",
-			code: docsSource,
-			lang: "text",
-		},
-	]),
-};
+	],
+});

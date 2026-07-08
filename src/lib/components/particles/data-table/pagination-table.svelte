@@ -1,14 +1,12 @@
 <script lang="ts">
 	import * as Table from "$lib/components/ui/table";
 	import {
-		Datatable,
 		TableHandler,
-		ThSort,
 		type State,
 		type TableHandlerInterface,
 	} from "@vincjo/datatables/server";
 	import { getProducts, type Product } from "$lib/api/products";
-	import { TablePagination } from "$lib/components/ui/data-table";
+	import { DataTable,ThSort, TablePagination } from "$lib/components/ui/data-table";
 
 	const handler = new TableHandler<Product>([], { rowsPerPage: 10 });
 	const table = handler as TableHandlerInterface<Product>;
@@ -17,8 +15,8 @@
 	handler.invalidate();
 </script>
 
-<div class="mx-auto max-w-5xl py-10">
-	<Datatable {table} headless>
+<div class="mx-auto w-4xl py-10">
+	<DataTable {table} headless>
 		<div class="overflow-hidden rounded-md border bg-background">
 			<Table.Root>
 				<Table.Header>
@@ -61,5 +59,5 @@
 			<div></div>
 			<TablePagination {table} />
 		{/snippet}
-	</Datatable>
+	</DataTable>
 </div>

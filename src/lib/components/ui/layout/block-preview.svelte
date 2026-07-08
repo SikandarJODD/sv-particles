@@ -101,7 +101,7 @@
 		</div>
 
 		<div
-			class="relative mt-2 overflow-hidden rounded-lg border px-0"
+			class="relative max-w-6xl mt-2 overflow-hidden rounded-lg border px-0"
 			style={`--preview-min-height: ${MIN_PREVIEW_HEIGHT}px;`}
 		>
 			{#if mode === "preview"}

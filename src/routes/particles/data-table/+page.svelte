@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { BlockPreview } from "$lib/components/ui/layout";
-	import { basicTableShowcase } from "$lib/components/particles/data-table/data/basic-table";
+	import { dataTableShowcases } from "$particles/data-table/data";
 </script>
 
 <section class="space-y-2">
@@ -10,6 +10,8 @@
 	</p>
 </section>
 
-<div class="mt-6">
-	<BlockPreview {...basicTableShowcase} />
+<div class="mt-6 space-y-10">
+	{#each dataTableShowcases as showcase (showcase.id)}
+		<BlockPreview {...showcase} />
+	{/each}
 </div>

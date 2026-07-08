@@ -1,12 +1,18 @@
 <script lang="ts">
 	import * as Table from "$lib/components/ui/table";
-	import { DataTable, ThSort } from "$lib/components/ui/data-table";
 	import {
 		TableHandler,
 		type State,
 		type TableHandlerInterface,
 	} from "@vincjo/datatables/server";
 	import { getProducts, type Product } from "./api/product";
+	import {
+		DataTable,
+		RowsPerPage,
+		TablePagination,
+		RowCount,
+		ThSort,
+	} from "$lib/components/ui/data-table";
 
 	const handler = new TableHandler<Product>([], { rowsPerPage: 5 });
 	const table = handler as TableHandlerInterface<Product>;
@@ -17,11 +23,15 @@
 
 <div class="mx-auto w-4xl py-10">
 	<DataTable {table} basic headless>
+		{#snippet header()}
+			<div></div>
+			<RowsPerPage {table} />
+		{/snippet}
 		<div class="mt-2 overflow-hidden rounded-md border bg-background">
-			<Table.Root>
+			<Table.Root class='table-fixed'>
 				<Table.Header>
 					<Table.Row class="hover:bg-transparent">
-						<ThSort {table} field="title">Product</ThSort>
+						<ThSort {table} class='w-90' field="title">Product</ThSort>
 						<ThSort {table} field="category">Category</ThSort>
 						<ThSort {table} field="price">Price</ThSort>
 						<ThSort {table} field="stock">Stock</ThSort>
@@ -50,5 +60,9 @@
 				</Table.Body>
 			</Table.Root>
 		</div>
+		{#snippet footer()}
+			<RowCount {table} />
+			<TablePagination {table} />
+		{/snippet}
 	</DataTable>
 </div>

@@ -150,7 +150,7 @@
 	}
 </script>
 
-<div class="mx-auto max-w-5xl py-10">
+<div class="mx-auto w-4xl py-10">
 	<Datatable {table} headless>
 		<div class="mt-2 overflow-hidden rounded-md border bg-background">
 			<Table.Root
@@ -196,7 +196,10 @@
 						</Table.Row>
 					{:else}
 						<Table.Row>
-							<Table.Cell colspan={columns.length} class="py-6 text-center text-muted-foreground">
+							<Table.Cell
+								colspan={columns.length}
+								class="py-6 text-center text-muted-foreground"
+							>
 								{#if handler.isLoading}
 									Loading products...
 								{:else}
