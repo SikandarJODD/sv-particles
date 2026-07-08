@@ -152,7 +152,7 @@
 		</div>
 
 		{#if activeFile?.code}
-			<ScrollArea class="h-132">
+			<ScrollArea class="h-132 overflow-hidden">
 				<Code.Root
 					code={activeFile.code}
 					lang={activeFile.lang}

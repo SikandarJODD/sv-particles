@@ -1,5 +1,4 @@
 import productsApiSource from "$lib/api/products.ts?raw";
-import docsSource from "../docs.md?raw";
 import FrozeColumnDropdown from "../froze-column-dropdown.svelte?raw";
 import FrozenColumnTable from "../frozen-column-table.svelte";
 import frozenColumnTableSource from "../frozen-column-table.svelte?raw";
@@ -29,12 +28,6 @@ export const frozenColumnTableShowcase = createDataTableShowcase({
 			path: "lib/api/products.ts",
 			code: productsApiSource,
 			lang: "typescript",
-		},
-		{
-			id: "docs.md",
-			path: "data-table/docs.md",
-			code: docsSource,
-			lang: "text",
 		},
 	],
 });

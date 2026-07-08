@@ -1,5 +1,4 @@
 import productsApiSource from "$lib/api/products.ts?raw";
-import docsSource from "../docs.md?raw";
 import SimpleTable from "../simple-table.svelte";
 import simpleTableSource from "../simple-table.svelte?raw";
 import { createDataTableShowcase } from "./shared";
@@ -22,12 +21,6 @@ export const simpleTableShowcase = createDataTableShowcase({
 			path: "lib/api/products.ts",
 			code: productsApiSource,
 			lang: "typescript",
-		},
-		{
-			id: "docs.md",
-			path: "data-table/docs.md",
-			code: docsSource,
-			lang: "text",
 		},
 	],
 });

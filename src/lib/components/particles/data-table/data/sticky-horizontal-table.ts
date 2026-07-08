@@ -1,5 +1,4 @@
 import productsApiSource from "$lib/api/products.ts?raw";
-import docsSource from "../docs.md?raw";
 import StickyHorizontalTable from "../sticky-horizontal-table.svelte";
 import stickyColumnDropdownSource from "../sticky-column-dropdown.svelte?raw";
 import stickyHorizontalTableSource from "../sticky-horizontal-table.svelte?raw";
@@ -29,12 +28,6 @@ export const stickyHorizontalTableShowcase = createDataTableShowcase({
 			path: "lib/api/products.ts",
 			code: productsApiSource,
 			lang: "typescript",
-		},
-		{
-			id: "docs.md",
-			path: "data-table/docs.md",
-			code: docsSource,
-			lang: "text",
 		},
 	],
 });

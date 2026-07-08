@@ -10,7 +10,7 @@ import { stickyHorizontalTableShowcase } from "./sticky-horizontal-table";
 
 export const dataTableShowcases = [
 	basicTableShowcase,
-	// simpleTableShowcase,
+	simpleTableShowcase,
 	sortableTableShowcase,
 	searchTableShowcase,
 	paginationTableShowcase,

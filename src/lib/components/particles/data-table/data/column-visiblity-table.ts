@@ -1,7 +1,6 @@
 import productsApiSource from "$lib/api/products.ts?raw";
 import ColumnVisiblityTable from "../column-visiblity-table.svelte";
 import columnVisiblityTableSource from "../column-visiblity-table.svelte?raw";
-import docsSource from "../docs.md?raw";
 import { createDataTableShowcase } from "./shared";
 
 export const columnVisiblityTableShowcase = createDataTableShowcase({
@@ -22,12 +21,6 @@ export const columnVisiblityTableShowcase = createDataTableShowcase({
 			path: "lib/api/products.ts",
 			code: productsApiSource,
 			lang: "typescript",
-		},
-		{
-			id: "docs.md",
-			path: "data-table/docs.md",
-			code: docsSource,
-			lang: "text",
 		},
 	],
 });

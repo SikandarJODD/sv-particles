@@ -6,6 +6,7 @@ const bundledLanguages = {
 	svelte: () => import('@shikijs/langs/svelte'),
 	typescript: () => import('@shikijs/langs/typescript'),
 	bash: () => import('@shikijs/langs/bash'),
+	markdown: () => import('@shikijs/langs/markdown'),
 	// javascript: () => import('@shikijs/langs/javascript'),
 	// diff: () => import('@shikijs/langs/diff'),
 	// json: () => import('@shikijs/langs/json'),
