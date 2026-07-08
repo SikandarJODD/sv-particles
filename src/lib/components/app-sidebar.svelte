@@ -92,7 +92,7 @@
 				{
 					title: "Data Table",
 					url: "/particles/data-table",
-					count: 1,
+					count: 10,
 					badge: 'beta',
 				},
 				// {

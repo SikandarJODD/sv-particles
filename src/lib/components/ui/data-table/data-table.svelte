@@ -2,6 +2,7 @@
 	import { type Snippet } from "svelte";
 	import type { TableHandlerInterface } from "@vincjo/datatables/server";
 	import { RowCount, RowsPerPage, TablePagination, TableSearch } from "./index";
+	import { cn } from "$lib/utils";
 
 	type Props = {
 		table: TableHandlerInterface<Row>;
@@ -20,7 +21,7 @@
 
 <section
 	bind:clientWidth={table.clientWidth}
-	class={["flex h-full flex-col rounded-[inherit] bg-inherit", !headless && "overflow-hidden"]}
+	class={cn("flex h-full flex-col rounded-[inherit] bg-inherit", !headless && "overflow-hidden")}
 >
 	<header class="flex w-full flex-wrap items-center justify-between gap-3">
 		{#if header}

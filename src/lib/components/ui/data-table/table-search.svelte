@@ -10,7 +10,6 @@
 		placeholder?: string;
 		class?: string;
 	};
-
 	let { table, placeholder = "Search...", class: className }: Props = $props();
 
 	// svelte-ignore state_referenced_locally
@@ -19,7 +18,7 @@
 
 <InputGroup.Root class={cn("max-w-xs", className)}>
 	<InputGroup.Addon>
-		{#if "isLoading" in table && table.isLoading}
+		{#if "isLoading" in table && table.isLoading && search.value.length > 0}
 			<Spinner />
 		{:else}
 			<SearchIcon />
@@ -30,6 +29,8 @@
 		type="search"
 		{placeholder}
 		bind:value={search.value}
-		oninput={() => search.set()}
+		oninput={() => {
+			search.set();
+		}}
 	/>
 </InputGroup.Root>
