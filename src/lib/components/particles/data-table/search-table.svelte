@@ -7,7 +7,7 @@
 		type TableHandlerInterface,
 	} from "@vincjo/datatables/server";
 	import { getProducts, type Product } from "$lib/api/products";
-	import { TableSearch, ThSort } from "$lib/components/ui/data-table";
+	import { TableSearch } from "$lib/components/ui/data-table";
 
 	const handler = new TableHandler<Product>([], { rowsPerPage: 10 });
 	const table = handler as TableHandlerInterface<Product>;
@@ -16,7 +16,7 @@
 	handler.invalidate();
 </script>
 
-<div class="mx-auto max-w-5xl py-10">
+<div class="mx-auto w-4xl py-10">
 	<Datatable {table} headless>
 		{#snippet header()}
 			<TableSearch {table} placeholder="Search products..." class="w-60" />

@@ -5,7 +5,6 @@
 	import {
 		Datatable,
 		TableHandler,
-		ThSort,
 		type State,
 		type TableHandlerInterface,
 	} from "@vincjo/datatables/server";
@@ -51,7 +50,7 @@
 	]);
 </script>
 
-<div class="mx-auto max-w-5xl py-10">
+<div class="mx-auto w-4xl py-10">
 	<Datatable {table} headless>
 		{#snippet header()}
 			<div></div>
@@ -65,11 +64,11 @@
 							</Button>
 						{/snippet}
 					</DropdownMenu.Trigger>
-					<DropdownMenu.Content class="w-46 shadow-none" side='right'>
+					<DropdownMenu.Content class="w-46 shadow-none" side="right">
 						<DropdownMenu.Group>
 							<DropdownMenu.Label>Column Visibility</DropdownMenu.Label>
 							<DropdownMenu.Separator />
-							{#each view.columns as column}
+							{#each view.columns as column (column.index)}
 								<DropdownMenu.CheckboxItem
 									closeOnSelect={false}
 									checked={column.isVisible}

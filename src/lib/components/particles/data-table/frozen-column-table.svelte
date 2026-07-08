@@ -59,7 +59,7 @@
 	const getFrozenState = (index: number) => (view.columns[index]?.isFrozen ? "true" : undefined);
 </script>
 
-<div class="mx-auto max-w-5xl py-10">
+<div class="mx-auto w-4xl py-10">
 	<Datatable {table} headless>
 		{#snippet header()}
 			<div></div>
@@ -106,7 +106,9 @@
 		>
 			<Table.Root class="table-fixed border-separate border-spacing-0">
 				<Table.Header>
-					<Table.Row class="bg-muted/50 *:border-b *:border-border! hover:bg-transparent [&>:not(:last-child)]:border-r">
+					<Table.Row
+						class="bg-muted/50 *:border-b *:border-border! hover:bg-transparent [&>:not(:last-child)]:border-r"
+					>
 						<Table.Head
 							class="w-30 data-[frozen=true]:z-20 data-[frozen=true]:bg-muted/90 data-[frozen=true]:backdrop-blur-sm"
 							data-frozen={getFrozenState(0)}
@@ -114,7 +116,10 @@
 							<div class="flex items-center justify-between gap-2">
 								<span class="truncate">ID</span>
 								{#if view.columns[0]}
-									<FrozeColumnDropdown column={view.columns[0]} columns={view.columns} />
+									<FrozeColumnDropdown
+										column={view.columns[0]}
+										columns={view.columns}
+									/>
 								{/if}
 							</div>
 						</Table.Head>
@@ -125,7 +130,10 @@
 							<div class="flex items-center justify-between gap-2">
 								<span class="truncate">Title</span>
 								{#if view.columns[1]}
-									<FrozeColumnDropdown column={view.columns[1]} columns={view.columns} />
+									<FrozeColumnDropdown
+										column={view.columns[1]}
+										columns={view.columns}
+									/>
 								{/if}
 							</div>
 						</Table.Head>
@@ -136,7 +144,10 @@
 							<div class="flex items-center justify-between gap-2">
 								<span class="truncate">Category</span>
 								{#if view.columns[2]}
-									<FrozeColumnDropdown column={view.columns[2]} columns={view.columns} />
+									<FrozeColumnDropdown
+										column={view.columns[2]}
+										columns={view.columns}
+									/>
 								{/if}
 							</div>
 						</Table.Head>
@@ -147,7 +158,10 @@
 							<div class="flex items-center justify-between gap-2">
 								<span class="truncate">Brand</span>
 								{#if view.columns[3]}
-									<FrozeColumnDropdown column={view.columns[3]} columns={view.columns} />
+									<FrozeColumnDropdown
+										column={view.columns[3]}
+										columns={view.columns}
+									/>
 								{/if}
 							</div>
 						</Table.Head>
@@ -158,7 +172,10 @@
 							<div class="flex items-center justify-between gap-2">
 								<span class="truncate">Price</span>
 								{#if view.columns[4]}
-									<FrozeColumnDropdown column={view.columns[4]} columns={view.columns} />
+									<FrozeColumnDropdown
+										column={view.columns[4]}
+										columns={view.columns}
+									/>
 								{/if}
 							</div>
 						</Table.Head>
@@ -169,7 +186,10 @@
 							<div class="flex items-center justify-between gap-2">
 								<span class="truncate">Stock</span>
 								{#if view.columns[5]}
-									<FrozeColumnDropdown column={view.columns[5]} columns={view.columns} />
+									<FrozeColumnDropdown
+										column={view.columns[5]}
+										columns={view.columns}
+									/>
 								{/if}
 							</div>
 						</Table.Head>

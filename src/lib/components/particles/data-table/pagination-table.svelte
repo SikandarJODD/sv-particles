@@ -17,7 +17,7 @@
 	handler.invalidate();
 </script>
 
-<div class="mx-auto max-w-5xl py-10">
+<div class="mx-auto w-4xl py-10">
 	<Datatable {table} headless>
 		<div class="overflow-hidden rounded-md border bg-background">
 			<Table.Root>
