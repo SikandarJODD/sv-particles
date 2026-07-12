@@ -3,10 +3,15 @@
 	import { dataTableShowcases } from "$particles/data-table/data";
 </script>
 
+<svelte:head>
+  <title>Data Table - Svelte QBlocks</title>
+  <meta name="description" content="A simple data table example using @vincjo/datatables with a small product API helper." />
+</svelte:head>
+
 <section class="space-y-2">
 	<h1 class="text-3xl font-semibold tracking-tight">Data Table</h1>
 	<p class="max-w-3xl text-sm text-muted-foreground md:text-base">
-		A simple data table example using `@vincjo/datatables` with a small product API helper.
+		A simple data table example using <a href='https://vincjo.fr/datatables/' target="_blank" class='px-1 bg-yellow-900/30 rounded-sm text-yellow-500'>@vincjo/datatables</a> with a small product API helper.
 	</p>
 </section>
 

@@ -78,7 +78,7 @@ const baseDataTableFiles: ShowcaseFile[] = [
 	},
 	{
 		id: "docs.md",
-		path: "data-table/docs.md",
+		path: "docs.md",
 		code: docsSource,
 		lang: "markdown",
 	},

@@ -1,9 +1,4 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	// import { Github, X as XLogo } from "$lib/svgs";
-	import { MoonIcon, SunIcon } from "@lucide/svelte";
-	import { mode, toggleMode } from "mode-watcher";
-
 	type FooterLink = {
 		label: string;
 		href: string;
@@ -36,7 +31,7 @@
 	<p
 		class="flex items-center justify-center py-3 text-center text-xs text-muted-foreground sm:text-xs"
 	>
-		&copy;  <span class='font-mono mx-1'>{currentYear}</span>Svelte Qblocks. Built by
+		&copy;  <span class='font-mono mx-1'>{currentYear}</span>Svelte QBlocks. Built by
 		<a
 			class="ml-2 inline-flex items-center gap-1.5 font-medium text-foreground transition-colors hover:text-muted-foreground"
 			href="https://bhide.dev?utm_source=sv-particles"

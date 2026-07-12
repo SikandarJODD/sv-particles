@@ -18,7 +18,7 @@ export const simpleTableShowcase = createDataTableShowcase({
 		},
 		{
 			id: "lib/api/products.ts",
-			path: "lib/api/products.ts",
+			path: "api/products.ts",
 			code: productsApiSource,
 			lang: "typescript",
 		},

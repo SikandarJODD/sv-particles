@@ -53,7 +53,7 @@
 	}
 
 	:global(pre.shiki) {
-		@apply overflow-x-auto rounded-xl bg-inherit py-4 text-[13px] no-scrollbar font-normal!;
+		@apply overflow-x-auto rounded-xl  py-4 text-[13px] no-scrollbar font-normal!;
 	}
 
 	:global(pre.shiki:not([data-code-overflow] *):not([data-code-overflow])) {
