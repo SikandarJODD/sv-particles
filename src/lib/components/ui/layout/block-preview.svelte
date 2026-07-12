@@ -28,10 +28,10 @@
 	let mode = $state<"preview" | "code">("preview");
 </script>
 
-<section {id} class="group">
+<section class="group scroll-mb-24">
 	<div class="relative max-w-2xl py-3">
 		<div class="flex flex-wrap items-end gap-x-2 gap-y-1">
-			<h2 class="text-xl font-medium tracking-tight text-foreground">
+			<h2 {id} class="text-xl font-medium text-primary cursor-pointer">
 				{title}
 			</h2>
 		</div>
@@ -101,7 +101,7 @@
 		</div>
 
 		<div
-			class="relative max-w-6xl mt-2 overflow-hidden rounded-lg border px-0"
+			class="relative mt-2 max-w-6xl overflow-hidden rounded-lg border px-0"
 			style={`--preview-min-height: ${MIN_PREVIEW_HEIGHT}px;`}
 		>
 			{#if mode === "preview"}

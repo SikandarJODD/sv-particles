@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class="relative flex h-full min-h-[calc(100svh-7.5rem)] items-center justify-center md:min-h-[calc(100vh-15rem)]"
+	class="relative flex h-full min-h-[calc(100svh-7.5rem)] items-center justify-center md:min-h-[calc(100vh-10rem)]"
 >
 	<div
 		class="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
@@ -13,11 +13,11 @@
 		<div class="text-center sm:mx-auto lg:mt-0 lg:mr-auto">
 			<div>
 				<a
-					href="/particles/banner"
+					href="/particles/data-table"
 					class="group mx-auto flex w-fit items-center gap-2 rounded-full border border-teal-500/40 bg-teal-200/40 p-0.5 pl-3 shadow-teal-100/40 transition-colors duration-300 md:shadow-md dark:bg-teal-800/20 dark:shadow-xl dark:shadow-teal-950/30"
 				>
 					<span class="font-mono text-sm! text-teal-500 md:text-xs!"
-						>New Banner Block</span
+						>New Datatable Blocks</span
 					>
 					<div
 						class="size-6 overflow-hidden rounded-full bg-teal-300 duration-500 group-hover:bg-teal-300 dark:bg-teal-900/70 dark:group-hover:bg-teal-900"

@@ -22,7 +22,7 @@
 </script>
 
 <div class="mx-auto w-4xl py-10">
-	<DataTable {table} basic headless>
+	<DataTable {table} headless>
 		{#snippet header()}
 			<div></div>
 			<RowsPerPage {table} />

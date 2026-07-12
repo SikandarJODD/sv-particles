@@ -13,7 +13,7 @@
 		</div>
 		<div class="flex items-center gap-1.5">
 			{#each desktopNav as item}
-				<Button variant="ghost" class="font-light" href={item.href}>{item.name}</Button>
+				<Button variant="ghost" class="font-light rounded-full px-4" href={item.href}>{item.name}</Button>
 			{/each}
 		</div>
 		<div class="flex items-center gap-1">
